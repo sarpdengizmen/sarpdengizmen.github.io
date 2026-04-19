@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vertical Axis Wind Turbine — Ege Sarp Dengizmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Ege Sarp <span>Dengizmen</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../index.html#projects" class="mob-link">Projects</a>
+    <a href="../index.html#contact"  class="mob-link">Contact</a>
+  </nav>
+
+  <header class="proj-header">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 7H2M6 3 2 7l4 4"/>
+        </svg>
+        All Projects
+      </a>
+      <div class="proj-meta">
+        <span class="proj-category">Engineering Projects</span>
+        <span class="proj-meta-sep"></span>
+        <span class="tag">Fluid Mechanics</span>
+        <span class="tag">Renewable Energy</span>
+        <span class="tag">Design</span>
+      </div>
+      <h1 class="proj-title">Vertical Axis Wind Turbine</h1>
+    </div>
+  </header>
+
+  <div class="proj-lead-media">
+    <video autoplay muted loop playsinline preload="metadata" poster="../WindTurbine/WindTurbine.png">
+      <source src="../WindTurbine/5789dcdb50e749aa80dd59c4c3c15aaa.mp4">
+    </video>
+  </div>
+
+  <section class="proj-body">
+    <div class="container">
+      <div class="proj-layout">
+
+        <div class="proj-description">
+          <p>
+            This project is a Darrieus-type vertical axis wind turbine (VAWT) designed, built,
+            and tested as part of the ME-407 Energy Systems course at METU. The design targets
+            the urban and near-urban environment — where wind is turbulent, directionally variable,
+            and often arriving at low speeds — conditions where horizontal-axis turbines struggle
+            and VAWTs have a structural advantage.
+          </p>
+          <p>
+            Unlike a conventional propeller turbine that must yaw to face the wind, a VAWT
+            accepts wind from any direction and works with the same efficiency regardless of
+            approach angle. This omnidirectional characteristic makes VAWTs well-suited for
+            rooftop installation, city edges, and any site with unpredictable wind roses.
+          </p>
+
+          <h3>Aerodynamic Design</h3>
+          <p>
+            The blade profile was selected through a literature survey of NACA aerofoil sections
+            optimised for low tip-speed-ratio operation — the regime typical of urban wind. Blade
+            geometry (chord length, pitch angle, aspect ratio) was sized using the Double Multiple
+            Streamtube (DMST) model, which divides the rotor into upstream and downstream half-cycles
+            and applies blade element theory to each separately. The DMST output was validated
+            against published experimental data for similar configurations before finalising the
+            geometry.
+          </p>
+          <p>
+            Blade count and solidity were traded off: higher solidity improves low-speed startup
+            torque at the cost of peak efficiency. A three-blade configuration was chosen as the
+            best balance for the target operating range.
+          </p>
+
+          <h3>Structural Design and Manufacturing</h3>
+          <p>
+            The blades were manufactured from laser-cut aluminium sheet, formed over a jig to
+            maintain the aerofoil profile, and reinforced with internal ribs to resist torsional
+            deformation under aerodynamic load. The central shaft and arm assembly are machined
+            steel, selected for the fatigue resistance required in a continuously rotating system.
+            All joints were designed with access in mind — the turbine can be fully disassembled
+            in the lab without special tools.
+          </p>
+
+          <h3>Wind Tunnel Testing</h3>
+          <p>
+            The completed turbine was tested in METU's wind tunnel facility across a range of wind
+            speeds. Power output (torque × angular velocity) was measured via a braking dynamometer,
+            and the power coefficient Cp was calculated as a function of tip-speed ratio (TSR).
+            The Cp–TSR curve was compared against the DMST predictions. Measured peak Cp fell
+            within the expected range, with deviations attributed to strut drag and tip losses
+            not captured in the simplified analytical model.
+          </p>
+        </div>
+
+        <aside class="proj-sidebar">
+          <div class="detail-block">
+            <p class="detail-label">Context</p>
+            <p class="detail-value">ME-407 Energy Systems — METU</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tags</p>
+            <div class="detail-tags">
+              <span class="tag">Fluid Mechanics</span>
+              <span class="tag">Renewable Energy</span>
+              <span class="tag">Design</span>
+              <span class="tag">VAWT</span>
+              <span class="tag">Wind Tunnel</span>
+            </div>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Methods</p>
+            <p class="detail-value">DMST aerodynamic model · Blade element theory · Wind tunnel Cp measurement</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Manufacturing</p>
+            <p class="detail-value">Laser-cut aluminium blades · CNC machined steel shaft · Lab assembly</p>
+          </div>
+          <a href="../WindTurbine/Final_Presentation_C2.pptx.pdf"
+             target="_blank" rel="noopener" class="sidebar-link">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
+            View Presentation (PDF)
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-gallery">
+    <div class="container">
+      <p class="gallery-heading">Gallery</p>
+      <div class="gallery-grid cols-2">
+        <div class="gallery-item full">
+          <img src="../WindTurbine/WindTurbine.png" alt="Wind turbine assembly" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="proj-nav">
+    <div class="container">
+      <a href="mode-analysis.html" class="nav-proj-link">
+        <span class="nav-proj-dir">← Previous</span>
+        <span class="nav-proj-title">Experimental Mode Analysis</span>
+      </a>
+      <a href="soft-robotics.html" class="nav-proj-link next">
+        <span class="nav-proj-dir">Next →</span>
+        <span class="nav-proj-title">Soft Robotics</span>
+      </a>
+    </div>
+  </nav>
+
+  <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+    hamburger.addEventListener("click", () => {
+      const open = hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", open);
+      mobileNav.classList.toggle("open", open);
+    });
+    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      mobileNav.classList.remove("open");
+    }));
+  </script>
+</body>
+</html>

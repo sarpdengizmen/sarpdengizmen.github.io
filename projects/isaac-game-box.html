@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaac Game Box — Ege Sarp Dengizmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Ege Sarp <span>Dengizmen</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../index.html#projects" class="mob-link">Projects</a>
+    <a href="../index.html#contact"  class="mob-link">Contact</a>
+  </nav>
+
+  <header class="proj-header">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 7H2M6 3 2 7l4 4"/>
+        </svg>
+        All Projects
+      </a>
+      <div class="proj-meta">
+        <span class="proj-category">Design Works</span>
+        <span class="proj-meta-sep"></span>
+        <span class="tag">Product Design</span>
+        <span class="tag">Laser Engraving</span>
+        <span class="tag">3D Printing</span>
+      </div>
+      <h1 class="proj-title">Isaac Game Box</h1>
+    </div>
+  </header>
+
+  <div class="proj-lead-media">
+    <img src="../IsaacGameBox/FourSoulsBoxRender.png" alt="Isaac Game Box render" loading="eager">
+  </div>
+
+  <section class="proj-body">
+    <div class="container">
+      <div class="proj-layout">
+
+        <div class="proj-description">
+          <p>
+            "The Binding of Isaac: Four Souls" is a card game that ships in a modest box with
+            loose components that inevitably scatter across a table — cards mixed with tokens,
+            dice lost in corners, rulebooks dog-eared and forgotten. This project is a purpose-built
+            solution: an all-in-one storage container that converts into a fully functional game
+            organiser for every component in the set.
+          </p>
+          <p>
+            The design constraint was that the box needed to serve two masters: as a closed
+            container it should look like an intentional object, something you'd want on your shelf.
+            Open, it becomes a game table — cards organised in accessible fans, tokens sorted by
+            type, dice in dedicated cups. The transformation is part of the experience.
+          </p>
+
+          <h3>Structure and Mechanism</h3>
+          <p>
+            The box uses a hinged lid that locks flat when closed, and props at 90° when open to
+            form the back wall of the play area. Internal dividers are press-fit and removable,
+            allowing the layout to adapt to game expansions. Card slots are sized to exactly fit
+            sleeved cards — a critical detail for players who protect their collections.
+          </p>
+          <p>
+            The base is 3D printed in PLA with a wood-fill filament for the structural parts,
+            giving the surface a natural grain texture that complements the laser-engraved panels.
+            All joints are chamfered to prevent card corners from catching during setup and teardown.
+          </p>
+
+          <h3>Laser-Engraved Wood Panels</h3>
+          <p>
+            The exterior panels are thin plywood sheets laser-engraved with iconography drawn
+            directly from the game — characters, symbols, and border motifs that match the hand-drawn,
+            slightly grotesque aesthetic of the original artwork. The engravings were vectorised from
+            reference images and cleaned up in Inkscape before being sent to the laser cutter.
+          </p>
+          <p>
+            The contrast between the dark engraved areas and the natural wood creates a high-impact
+            visual at zero added paint. A matte finish seals the wood and prevents it from absorbing
+            moisture over time.
+          </p>
+
+          <h3>Component Fit</h3>
+          <p>
+            Every compartment was prototyped against the physical components before final print.
+            The token trays are the tightest tolerance — they hold components securely enough that
+            the box can be transported upside down without anything shifting, but loose enough that
+            tokens can be grabbed with one hand during play.
+          </p>
+        </div>
+
+        <aside class="proj-sidebar">
+          <div class="detail-block">
+            <p class="detail-label">Type</p>
+            <p class="detail-value">Personal Project</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tags</p>
+            <div class="detail-tags">
+              <span class="tag">Product Design</span>
+              <span class="tag">Laser Engraving</span>
+              <span class="tag">3D Printing</span>
+              <span class="tag">Game Accessory</span>
+            </div>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Materials</p>
+            <p class="detail-value">PLA with wood-fill · 3 mm laser-ply panels</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tools</p>
+            <p class="detail-value">Fusion 360 · Inkscape · CO₂ Laser Cutter</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-gallery">
+    <div class="container">
+      <p class="gallery-heading">Gallery</p>
+      <div class="gallery-grid">
+        <div class="gallery-item wide">
+          <img src="../IsaacGameBox/FourSoulsSetup.png" alt="Box open in game configuration" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="../IsaacGameBox/FourSoulsClosed.png" alt="Box closed" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="../IsaacGameBox/IsaacBox1.JPEG" alt="Box detail photo 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="../IsaacGameBox/Isaacbox2.JPEG" alt="Box detail photo 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="../IsaacGameBox/IsaacBox3.JPEG" alt="Box detail photo 3" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="proj-nav">
+    <div class="container">
+      <a href="desk-lamp.html" class="nav-proj-link">
+        <span class="nav-proj-dir">← Previous</span>
+        <span class="nav-proj-title">Desk Lamp</span>
+      </a>
+      <a href="microros-bot.html" class="nav-proj-link next">
+        <span class="nav-proj-dir">Next →</span>
+        <span class="nav-proj-title">MicroROS Pick-and-Place Robot</span>
+      </a>
+    </div>
+  </nav>
+
+  <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+    hamburger.addEventListener("click", () => {
+      const open = hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", open);
+      mobileNav.classList.toggle("open", open);
+    });
+    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      mobileNav.classList.remove("open");
+    }));
+  </script>
+</body>
+</html>

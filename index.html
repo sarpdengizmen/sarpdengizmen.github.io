@@ -269,6 +269,14 @@
       gap: var(--gap);
     }
 
+    /* card link wrapper */
+    a.card-link {
+      display: contents;
+      color: inherit;
+      text-decoration: none;
+    }
+    a.card-link .card { cursor: pointer; }
+
     /* card */
     .card {
       background: var(--surface);
@@ -574,6 +582,7 @@
     const DESIGN_PROJECTS = [
       {
         title: "Blooming Rose Gift Box",
+        slug: "blooming-rose",
         description:
           "A fully 3D-printed blooming rose gift box built for MakerWorld's Valentine's Day Design Contest, earning the Excellent Participation Award. The rose opens to reveal the gift inside, fusing motion and surprise with lasting utility. Every part is engineered for tool-free, multicolour assembly.",
         tags: ["3D Printing", "Product Design"],
@@ -585,6 +594,7 @@
       },
       {
         title: "Desk Lamp",
+        slug: "desk-lamp",
         description:
           "A custom desk lamp where nearly every component is 3D printed — translucent PETG beams are engineered with deliberate print sequences to maximise light diffraction. Users arrange the beams freely to sculpt their own 'topography'. Powered by open-source WLED firmware for full app-based lighting control.",
         tags: ["3D Printing", "IoT", "WLED"],
@@ -596,6 +606,7 @@
       },
       {
         title: "Isaac Game Box",
+        slug: "isaac-game-box",
         description:
           "An all-in-one storage and table organiser for the card game 'The Binding of Isaac: Four Souls'. Every component has a dedicated slot; the box unfolds into a game-ready organiser mid-session. The exterior features laser-engraved wood panelling that echoes the game's rustic, hand-drawn aesthetic.",
         tags: ["Product Design", "Laser Engraving", "3D Printing"],
@@ -609,6 +620,7 @@
     const ENGINEERING_PROJECTS = [
       {
         title: "MicroROS Pick-and-Place Robot",
+        slug: "microros-bot",
         description:
           "A differential-drive robot that autonomously finds a red object, picks it up with a servo gripper, and drops it at a fixed target — guided by a ceiling camera and AprilTag pose estimation. Runs micro-ROS on an ESP32 over WiFi, with a ROS 2 Python vision pipeline and a MATLAB/Stateflow state machine orchestrating the sequence.",
         tags: ["ROS 2", "Robotics", "Embedded"],
@@ -621,6 +633,7 @@
       },
       {
         title: "MIDI Robot",
+        slug: "midi-robot",
         description:
           "A modular, research-grade mobile platform built as a METU ME462 Capstone project. MIDI features LiDAR, wide-angle camera, IMU, ultrasonic bumpers, and an uninterruptible Makita 18 V supply. Its expandable sensor bays and open software stack make it accessible to everyone from first-year students to graduate researchers.",
         tags: ["Robotics", "Embedded", "Modular Design"],
@@ -632,6 +645,7 @@
       },
       {
         title: "Rotary Inverted Pendulum",
+        slug: "rotary-pendulum",
         description:
           "A classic nonlinear control benchmark — modelled, identified, and fully controlled. State-feedback pole placement handles balance at the upright equilibrium; an optimal energy-based controller manages swing-up from rest. A Kalman filter provides full-state estimation under measurement noise, validated against both simulation and hardware.",
         tags: ["Control Systems", "State Estimation", "MATLAB"],
@@ -642,6 +656,7 @@
       },
       {
         title: "Tuned Mass Damper",
+        slug: "tuned-mass-damper",
         description:
           "A METU summer research project analysing Tuned Mass Dampers across 2-DOF and 3-DOF configurations with H₂ and H∞ optimisation in MATLAB and MathCAD. The work culminated in a physical demo: a custom TMD tuned to suppress resonance in a test structure, with Arduino data acquisition and Python post-processing confirming the predictions.",
         tags: ["Vibrations", "MATLAB", "Control"],
@@ -652,6 +667,7 @@
       },
       {
         title: "Mechanical System Identification",
+        slug: "mode-analysis",
         description:
           "Experimental and computational modal analysis combining FRF extraction from impulse hammer tests with the Ibrahim Time Domain (ITD) method for modal parameter identification. Optimal sensor placement was determined via AutoMAC analysis, and results were validated against a finite element model — demonstrating close agreement between predicted and measured mode shapes.",
         tags: ["Vibrations", "Data Analysis", "FEA"],
@@ -662,6 +678,7 @@
       },
       {
         title: "Vertical Axis Wind Turbine",
+        slug: "wind-turbine",
         description:
           "A vertical-axis wind turbine designed from scratch for the ME-407 design course, targeting off-grid urban environments with multi-directional wind capture and straightforward manufacture. The team developed the complete system — from engineering analysis and power transmission to a working prototype testable in the Aerospace Department's wind tunnel.",
         tags: ["Energy", "CAD", "Mechanical Design"],
@@ -673,6 +690,7 @@
       },
       {
         title: "Soft Robotics",
+        slug: "soft-robotics",
         description:
           "An investigation into soft robotic mechanisms — compliant, flexible-bodied actuators that excel where rigid robots fall short: safe human interaction, delicate manipulation, and adaptive gripping. This project explores soft actuator design, fabrication, and motion characterisation under pneumatic actuation.",
         tags: ["Robotics", "Soft Actuators"],
@@ -702,7 +720,7 @@
       const tagsHtml = project.tags
         .map(t => `<span class="tag">${t}</span>`)
         .join("");
-      return `
+      const inner = `
         <article class="card">
           <div class="card-media">${buildMediaHtml(project.media)}</div>
           <div class="card-body">
@@ -711,6 +729,9 @@
             <div class="card-tags">${tagsHtml}</div>
           </div>
         </article>`;
+      return project.slug
+        ? `<a href="projects/${project.slug}.html" class="card-link">${inner}</a>`
+        : inner;
     }
 
     function renderGrid(projects, containerId) {

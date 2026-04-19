@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft Robotics Gripper — Ege Sarp Dengizmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Ege Sarp <span>Dengizmen</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../index.html#projects" class="mob-link">Projects</a>
+    <a href="../index.html#contact"  class="mob-link">Contact</a>
+  </nav>
+
+  <header class="proj-header">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 7H2M6 3 2 7l4 4"/>
+        </svg>
+        All Projects
+      </a>
+      <div class="proj-meta">
+        <span class="proj-category">Engineering Projects</span>
+        <span class="proj-meta-sep"></span>
+        <span class="tag">Soft Robotics</span>
+        <span class="tag">Pneumatics</span>
+        <span class="tag">Fabrication</span>
+      </div>
+      <h1 class="proj-title">Soft Robotics Gripper</h1>
+    </div>
+  </header>
+
+  <div class="proj-lead-media">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../SoftRobotics/SoftRoboticsVid.MOV">
+    </video>
+  </div>
+
+  <section class="proj-body">
+    <div class="container">
+      <div class="proj-layout">
+
+        <div class="proj-description">
+          <p>
+            Conventional rigid grippers struggle with delicate, irregular, or deformable objects —
+            a fruit bruised by too much clamping force, a circuit board cracked by misaligned jaws.
+            Soft robotics addresses this with actuators made from compliant materials that deform
+            continuously under pneumatic pressure, conforming naturally to whatever they grasp.
+            This project is a pneumatically actuated soft gripper designed, moulded, and tested
+            from first principles.
+          </p>
+          <p>
+            The finger design is a bending actuator: an elastomeric body with an embedded strain-limiting
+            layer along one face. When pressurised, the body wants to expand uniformly — but the
+            inextensible layer on one side prevents elongation there, forcing the structure to curve.
+            This predictable bending kinematics is the basis for most soft gripper fingers used in
+            research and industry today.
+          </p>
+
+          <h3>Mould Design and Fabrication</h3>
+          <p>
+            The finger geometry was designed in CAD and the corresponding moulds were 3D printed in
+            PLA. Ecoflex 00-30 silicone was mixed, degassed under vacuum, and cast in two stages:
+            first the body with embedded channel geometry, then the strain-limiting backing layer
+            using a stiffer silicone (Dragon Skin 10). The two-material approach gives the desired
+            asymmetric stiffness without requiring a separate fabric inlay.
+          </p>
+          <p>
+            Post-cure, the fingers were demolded, trimmed, and bonded to a common pneumatic manifold
+            that allows each finger to be addressed independently from a single pressure source. The
+            casting process required iteration to eliminate air pockets at fine channel features —
+            a problem resolved by adjusting the mould fill orientation and introducing degassing channels.
+          </p>
+
+          <h3>Gripper Assembly and Actuation</h3>
+          <p>
+            Three fingers are arranged symmetrically around a central hub, equally spaced at 120°.
+            This configuration allows the gripper to grasp cylindrical objects in power grip and
+            small objects in pinch grip simply by varying the actuation pressure — no mechanical
+            reconfiguration required. The hub includes a standard robot flange interface for
+            attachment to a manipulator or test rig.
+          </p>
+          <p>
+            Actuation is provided by a small air compressor regulated to a working pressure of 40–80 kPa.
+            Solenoid valves control each finger independently under manual or programmatic control.
+            The gripper's compliance means that gripping force scales with pressure and contact
+            geometry rather than position control — an inherently safer interaction model for fragile
+            objects.
+          </p>
+
+          <h3>Performance</h3>
+          <p>
+            The gripper was tested on objects ranging from raw eggs and soft fruits to rigid
+            cylinders and irregular 3D-printed parts. Successful grasps were achieved across the
+            full test set without object damage, demonstrating the core advantage of compliance:
+            the gripper adapts to the object rather than demanding the object fit the gripper.
+          </p>
+        </div>
+
+        <aside class="proj-sidebar">
+          <div class="detail-block">
+            <p class="detail-label">Context</p>
+            <p class="detail-value">Robotics Lab Project — METU</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tags</p>
+            <div class="detail-tags">
+              <span class="tag">Soft Robotics</span>
+              <span class="tag">Pneumatics</span>
+              <span class="tag">Fabrication</span>
+              <span class="tag">Silicone Moulding</span>
+              <span class="tag">Gripper</span>
+            </div>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Materials</p>
+            <p class="detail-value">Ecoflex 00-30 · Dragon Skin 10 · PLA moulds</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Actuation</p>
+            <p class="detail-value">Pneumatic · 40–80 kPa · 3× independent solenoid valves</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tools</p>
+            <p class="detail-value">Fusion 360 · FDM 3D printing · Vacuum degassing</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <nav class="proj-nav">
+    <div class="container">
+      <a href="wind-turbine.html" class="nav-proj-link">
+        <span class="nav-proj-dir">← Previous</span>
+        <span class="nav-proj-title">Vertical Axis Wind Turbine</span>
+      </a>
+      <a href="blooming-rose.html" class="nav-proj-link next">
+        <span class="nav-proj-dir">Next →</span>
+        <span class="nav-proj-title">Blooming Rose Gift Box</span>
+      </a>
+    </div>
+  </nav>
+
+  <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+    hamburger.addEventListener("click", () => {
+      const open = hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", open);
+      mobileNav.classList.toggle("open", open);
+    });
+    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      mobileNav.classList.remove("open");
+    }));
+  </script>
+</body>
+</html>

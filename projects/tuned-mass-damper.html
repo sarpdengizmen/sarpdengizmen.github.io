@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuned Mass Damper — Ege Sarp Dengizmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">Ege Sarp <span>Dengizmen</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../index.html#projects" class="mob-link">Projects</a>
+    <a href="../index.html#contact"  class="mob-link">Contact</a>
+  </nav>
+
+  <header class="proj-header">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 7H2M6 3 2 7l4 4"/>
+        </svg>
+        All Projects
+      </a>
+      <div class="proj-meta">
+        <span class="proj-category">Engineering Projects</span>
+        <span class="proj-meta-sep"></span>
+        <span class="tag">Vibrations</span>
+        <span class="tag">Structural Dynamics</span>
+        <span class="tag">MATLAB</span>
+      </div>
+      <h1 class="proj-title">Tuned Mass Damper</h1>
+    </div>
+  </header>
+
+  <div class="proj-lead-media">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="../TunedMassDampener/ProjectDemonstration.mp4">
+    </video>
+  </div>
+
+  <section class="proj-body">
+    <div class="container">
+      <div class="proj-layout">
+
+        <div class="proj-description">
+          <p>
+            A tuned mass damper (TMD) is a passive vibration absorber — a secondary mass-spring-damper
+            system attached to a primary structure to suppress resonant oscillations. By tuning the
+            absorber's natural frequency to match the primary structure's resonance, the TMD draws
+            kinetic energy away from the main mass and dissipates it internally. This project covers
+            the analytical design, optimisation, and physical demonstration of a TMD system.
+          </p>
+          <p>
+            The practical motivation is well-established: TMDs are used in skyscrapers, bridges,
+            and precision machinery to manage wind-induced sway, seismic response, and machine
+            imbalance. Taipei 101's 660-tonne pendulum damper is perhaps the most visible example.
+            This project works through the same physics at lab scale, validating the theory
+            against a physical rig.
+          </p>
+
+          <h3>2-DOF and 3-DOF Modelling</h3>
+          <p>
+            The system was modelled as both a 2-DOF system (primary structure + TMD) and a 3-DOF
+            extension (primary structure + two TMDs in series) to assess whether a dual-absorber
+            arrangement could broaden the effective suppression bandwidth. Equations of motion were
+            derived in matrix form and solved in the frequency domain to produce frequency response
+            functions (FRFs) for each configuration.
+          </p>
+          <p>
+            The key trade-off in TMD design is bandwidth versus peak attenuation: a narrowly tuned
+            TMD gives maximum suppression at one frequency but degrades quickly off-resonance. The
+            3-DOF arrangement was evaluated for its ability to mitigate this limitation.
+          </p>
+
+          <h3>H₂ and H∞ Optimisation</h3>
+          <p>
+            Two optimisation criteria were applied to find the best TMD parameters (mass ratio,
+            tuning ratio, and damping ratio):
+          </p>
+          <ul>
+            <li>
+              <strong style="color: var(--text);">H₂ optimisation</strong> — minimises the total
+              energy of the primary structure's response under broadband (white noise) excitation.
+              Appropriate when the excitation spectrum is wide and uncertain.
+            </li>
+            <li>
+              <strong style="color: var(--text);">H∞ optimisation</strong> — minimises the worst-case
+              peak response across all frequencies (the infinity norm of the FRF). Appropriate when
+              the excitation frequency is near-resonant and the goal is robustness against
+              detuning.
+            </li>
+          </ul>
+          <p>
+            The two criteria yield different optimal parameter sets, and the trade-off was quantified:
+            H∞-optimal TMDs give slightly worse broadband performance but significantly better
+            peak attenuation and robustness against parameter uncertainty.
+          </p>
+
+          <h3>Physical Demonstration</h3>
+          <p>
+            A physical testbed was constructed with an adjustable spring and sliding mass to allow
+            the tuning ratio to be varied experimentally. Frequency sweeps were performed with and
+            without the TMD, and the measured FRFs were compared against the analytical predictions.
+            The TMD was shown to reliably suppress the primary resonance peak, with measured
+            attenuation matching theory to within acceptable experimental error.
+          </p>
+        </div>
+
+        <aside class="proj-sidebar">
+          <div class="detail-block">
+            <p class="detail-label">Context</p>
+            <p class="detail-value">METU Summer Research Project</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tags</p>
+            <div class="detail-tags">
+              <span class="tag">Vibrations</span>
+              <span class="tag">Structural Dynamics</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">H₂ / H∞</span>
+              <span class="tag">Passive Control</span>
+            </div>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Methods</p>
+            <p class="detail-value">2-DOF / 3-DOF modelling · FRF analysis · H₂ optimisation · H∞ optimisation</p>
+          </div>
+          <div class="detail-block">
+            <p class="detail-label">Tools</p>
+            <p class="detail-value">MATLAB · Simulink</p>
+          </div>
+          <a href="../TunedMassDampener/Summer Project Report.pdf"
+             target="_blank" rel="noopener" class="sidebar-link">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
+            View Report (PDF)
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <nav class="proj-nav">
+    <div class="container">
+      <a href="rotary-pendulum.html" class="nav-proj-link">
+        <span class="nav-proj-dir">← Previous</span>
+        <span class="nav-proj-title">Rotary Inverted Pendulum</span>
+      </a>
+      <a href="mode-analysis.html" class="nav-proj-link next">
+        <span class="nav-proj-dir">Next →</span>
+        <span class="nav-proj-title">Experimental Mode Analysis</span>
+      </a>
+    </div>
+  </nav>
+
+  <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobileNav");
+    hamburger.addEventListener("click", () => {
+      const open = hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", open);
+      mobileNav.classList.toggle("open", open);
+    });
+    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      mobileNav.classList.remove("open");
+    }));
+  </script>
+</body>
+</html>
