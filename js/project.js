@@ -76,7 +76,7 @@ function initLightbox() {
   });
 }
 
-/* Auto Gallery — reads gallery.json from data-folder, renders thumbnails in right column */
+/* Auto Gallery — horizontal scroll row with arrow buttons */
 const galleryEl = document.querySelector(".proj-gallery-auto[data-folder]");
 if (galleryEl) {
   const folder = galleryEl.dataset.folder;
@@ -84,8 +84,26 @@ if (galleryEl) {
     .then(r => r.ok ? r.json() : [])
     .then(files => {
       if (!files.length) { initLightbox(); return; }
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "gallery-scroll-wrapper";
+
+      const chevL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>`;
+      const chevR = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>`;
+
+      const prevBtn = document.createElement("button");
+      prevBtn.className = "gallery-scroll-btn";
+      prevBtn.setAttribute("aria-label", "Scroll left");
+      prevBtn.innerHTML = chevL;
+
+      const nextBtn = document.createElement("button");
+      nextBtn.className = "gallery-scroll-btn";
+      nextBtn.setAttribute("aria-label", "Scroll right");
+      nextBtn.innerHTML = chevR;
+
       const strip = document.createElement("div");
       strip.className = "proj-thumb-strip";
+
       files.forEach(file => {
         const ext = file.split(".").pop().toLowerCase();
         const isVideo = ["mp4", "mov", "webm"].includes(ext);
@@ -106,7 +124,14 @@ if (galleryEl) {
         }
         strip.appendChild(item);
       });
-      galleryEl.appendChild(strip);
+
+      prevBtn.addEventListener("click", () => strip.scrollBy({ left: -240, behavior: "smooth" }));
+      nextBtn.addEventListener("click", () => strip.scrollBy({ left: 240, behavior: "smooth" }));
+
+      wrapper.appendChild(prevBtn);
+      wrapper.appendChild(strip);
+      wrapper.appendChild(nextBtn);
+      galleryEl.appendChild(wrapper);
       initLightbox();
     })
     .catch(() => initLightbox());

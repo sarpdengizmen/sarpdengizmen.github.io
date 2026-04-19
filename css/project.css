@@ -220,13 +220,40 @@ img, video { display: block; max-width: 100%; }
   display: block;
 }
 
-/* ── Thumbnail Strip (under sidebar in right column) ─────────────────────── */
-.proj-thumb-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 8px;
+/* ── Gallery scroll row ──────────────────────────────────────────────────── */
+.gallery-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+.gallery-scroll-btn {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color var(--ease), color var(--ease);
+}
+.gallery-scroll-btn:hover { border-color: var(--accent); color: var(--accent); }
+.gallery-scroll-btn svg { width: 14px; height: 14px; }
+
+.proj-thumb-strip {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 8px;
+  scrollbar-width: none;
+  flex: 1;
+}
+.proj-thumb-strip::-webkit-scrollbar { display: none; }
 .proj-thumb-item {
+  flex: 0 0 110px;
   aspect-ratio: 1;
   border-radius: 6px;
   overflow: hidden;
@@ -236,7 +263,8 @@ img, video { display: block; max-width: 100%; }
   transition: border-color var(--ease);
 }
 .proj-thumb-item:hover { border-color: rgba(255, 107, 43, 0.5); }
-.proj-thumb-item img {
+.proj-thumb-item img,
+.proj-thumb-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -432,9 +460,17 @@ footer {
 /* ── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .proj-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
   }
+  .proj-right {
+    display: contents;
+  }
+  .proj-lead-media { order: -3; }
+  .proj-gallery-auto { order: -2; }
+  .proj-description { order: -1; }
+  .proj-sidebar { order: 0; }
 }
 @media (max-width: 767px) {
   .proj-header { padding-top: calc(var(--nav-h) + 40px); padding-bottom: 40px; }
