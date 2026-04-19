@@ -1,0 +1,7 @@
+This was a hobby project for a desk lamp. The main elements except the electronics are all 3d printed. Translucent petg was used for the beams, engineered print sequences were used to maximize 
+the beams light diffraction. 
+
+The design is highly customizable where the user can place the beams in any arragnment they want sort of creating their own "Topography". The lamp is also using open-source led software WLED allowing 
+the user to choose from many lighjting effects and create their own.
+
+The end results is a personal, "living", minimal structure right at your home. 
