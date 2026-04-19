@@ -47,12 +47,6 @@
     </div>
   </header>
 
-  <div class="proj-lead-media">
-    <video autoplay muted loop playsinline preload="metadata">
-      <source src="../RotaryInvertedPendulum/InvPendulum.MOV">
-    </video>
-  </div>
-
   <section class="proj-body">
     <div class="container">
       <div class="proj-layout">
@@ -114,7 +108,13 @@
           </p>
         </div>
 
-        <aside class="proj-sidebar">
+        <div class="proj-right">
+          <div class="proj-lead-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="../RotaryInvertedPendulum/InvPendulum.MOV">
+            </video>
+          </div>
+          <aside class="proj-sidebar">
           <div class="detail-block">
             <p class="detail-label">Context</p>
             <p class="detail-value">Control Systems Course Project — METU</p>
@@ -143,6 +143,7 @@
             View Report (PDF)
           </a>
         </aside>
+        <div class="proj-gallery-auto" data-folder="../RotaryInvertedPendulum"></div>
       </div>
     </div>
   </section>
@@ -162,19 +163,6 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
-    hamburger.addEventListener("click", () => {
-      const open = hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", open);
-      mobileNav.classList.toggle("open", open);
-    });
-    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      mobileNav.classList.remove("open");
-    }));
-  </script>
+  <script src="../js/project.js"></script>
 </body>
 </html>

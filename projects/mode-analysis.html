@@ -47,10 +47,6 @@
     </div>
   </header>
 
-  <div class="proj-lead-media">
-    <img src="../ModeAnalysis/ImpulseGIF.gif" alt="Impulse response animation" loading="eager">
-  </div>
-
   <section class="proj-body">
     <div class="container">
       <div class="proj-layout">
@@ -118,7 +114,13 @@
           </p>
         </div>
 
-        <aside class="proj-sidebar">
+        <div class="proj-right">
+          <div class="proj-lead-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="../ModeAnalysis/MainVideo.mp4">
+            </video>
+          </div>
+          <aside class="proj-sidebar">
           <div class="detail-block">
             <p class="detail-label">Context</p>
             <p class="detail-value">Vibrations & Structural Dynamics Course — METU</p>
@@ -146,20 +148,8 @@
             <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
             View Presentation (PDF)
           </a>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="proj-gallery">
-    <div class="container">
-      <p class="gallery-heading">Gallery</p>
-      <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <img src="../ModeAnalysis/FRF.png" alt="Frequency response functions" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../ModeAnalysis/Modes.png" alt="Identified mode shapes" loading="lazy">
+          </aside>
+          <div class="proj-gallery-auto" data-folder="../ModeAnalysis"></div>
         </div>
       </div>
     </div>
@@ -180,19 +170,6 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
-    hamburger.addEventListener("click", () => {
-      const open = hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", open);
-      mobileNav.classList.toggle("open", open);
-    });
-    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      mobileNav.classList.remove("open");
-    }));
-  </script>
+  <script src="../js/project.js"></script>
 </body>
 </html>

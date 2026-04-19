@@ -47,13 +47,6 @@
     </div>
   </header>
 
-  <!-- Lead media -->
-  <div class="proj-lead-media">
-    <video autoplay muted loop playsinline preload="metadata" poster="../BloomingRose/BloomingRose.png">
-      <source src="../BloomingRose/BloomingRose.MOV">
-    </video>
-  </div>
-
   <!-- Content -->
   <section class="proj-body">
     <div class="container">
@@ -103,7 +96,13 @@
           </p>
         </div>
 
-        <aside class="proj-sidebar">
+        <div class="proj-right">
+          <div class="proj-lead-media">
+            <video autoplay muted loop playsinline preload="metadata" poster="../BloomingRose/BloomingRose.png">
+              <source src="../BloomingRose/BloomingRose.MOV">
+            </video>
+          </div>
+          <aside class="proj-sidebar">
           <div class="detail-block">
             <p class="detail-label">Context</p>
             <p class="detail-value">MakerWorld Valentine's Day Design Contest 2026</p>
@@ -130,27 +129,13 @@
             <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
             View on MakerWorld
           </a>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="proj-gallery">
-    <div class="container">
-      <p class="gallery-heading">Gallery</p>
-      <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <img src="../BloomingRose/BloomingRose.png" alt="Blooming Rose closed" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../BloomingRose/BloomingRoseReUse.webp" alt="Rose re-use as decorative piece" loading="lazy">
+          </aside>
+          <div class="proj-gallery-auto" data-folder="../BloomingRose"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Prev / Next -->
   <nav class="proj-nav">
     <div class="container">
       <a href="soft-robotics.html" class="nav-proj-link">
@@ -166,19 +151,6 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
-    hamburger.addEventListener("click", () => {
-      const open = hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", open);
-      mobileNav.classList.toggle("open", open);
-    });
-    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      mobileNav.classList.remove("open");
-    }));
-  </script>
+  <script src="../js/project.js"></script>
 </body>
 </html>

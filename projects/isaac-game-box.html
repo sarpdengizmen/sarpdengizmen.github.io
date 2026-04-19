@@ -47,10 +47,6 @@
     </div>
   </header>
 
-  <div class="proj-lead-media">
-    <img src="../IsaacGameBox/FourSoulsBoxRender.png" alt="Isaac Game Box render" loading="eager">
-  </div>
-
   <section class="proj-body">
     <div class="container">
       <div class="proj-layout">
@@ -105,7 +101,11 @@
           </p>
         </div>
 
-        <aside class="proj-sidebar">
+        <div class="proj-right">
+          <div class="proj-lead-media">
+            <img src="../IsaacGameBox/FourSoulsBoxRender.png" alt="Isaac Game Box render" loading="eager">
+          </div>
+          <aside class="proj-sidebar">
           <div class="detail-block">
             <p class="detail-label">Type</p>
             <p class="detail-value">Personal Project</p>
@@ -127,29 +127,8 @@
             <p class="detail-label">Tools</p>
             <p class="detail-value">Fusion 360 · Inkscape · CO₂ Laser Cutter</p>
           </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="proj-gallery">
-    <div class="container">
-      <p class="gallery-heading">Gallery</p>
-      <div class="gallery-grid">
-        <div class="gallery-item wide">
-          <img src="../IsaacGameBox/FourSoulsSetup.png" alt="Box open in game configuration" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../IsaacGameBox/FourSoulsClosed.png" alt="Box closed" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../IsaacGameBox/IsaacBox1.JPEG" alt="Box detail photo 1" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../IsaacGameBox/Isaacbox2.JPEG" alt="Box detail photo 2" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../IsaacGameBox/IsaacBox3.JPEG" alt="Box detail photo 3" loading="lazy">
+          </aside>
+          <div class="proj-gallery-auto" data-folder="../IsaacGameBox"></div>
         </div>
       </div>
     </div>
@@ -170,19 +149,6 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
-    hamburger.addEventListener("click", () => {
-      const open = hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", open);
-      mobileNav.classList.toggle("open", open);
-    });
-    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      mobileNav.classList.remove("open");
-    }));
-  </script>
+  <script src="../js/project.js"></script>
 </body>
 </html>

@@ -47,12 +47,6 @@
     </div>
   </header>
 
-  <div class="proj-lead-media">
-    <video autoplay muted loop playsinline preload="metadata" poster="../DeskLamp/DeskLampRender.png">
-      <source src="../DeskLamp/DeskLamp1.MOV">
-    </video>
-  </div>
-
   <section class="proj-body">
     <div class="container">
       <div class="proj-layout">
@@ -112,7 +106,13 @@
           </p>
         </div>
 
-        <aside class="proj-sidebar">
+        <div class="proj-right">
+          <div class="proj-lead-media">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="../DeskLamp/MainVideo.mp4">
+            </video>
+          </div>
+          <aside class="proj-sidebar">
           <div class="detail-block">
             <p class="detail-label">Type</p>
             <p class="detail-value">Personal Hobby Project</p>
@@ -139,20 +139,8 @@
             <p class="detail-label">Tools</p>
             <p class="detail-value">Fusion 360 · Bambu Studio · WLED firmware</p>
           </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="proj-gallery">
-    <div class="container">
-      <p class="gallery-heading">Gallery</p>
-      <div class="gallery-grid cols-2">
-        <div class="gallery-item">
-          <img src="../DeskLamp/DeskLampRender.png" alt="CAD render of the desk lamp" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="../DeskLamp/DeskLamp2.JPEG" alt="Desk lamp detail photo" loading="lazy">
+          </aside>
+          <div class="proj-gallery-auto" data-folder="../DeskLamp"></div>
         </div>
       </div>
     </div>
@@ -173,19 +161,6 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const mobileNav = document.getElementById("mobileNav");
-    hamburger.addEventListener("click", () => {
-      const open = hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", open);
-      mobileNav.classList.toggle("open", open);
-    });
-    document.querySelectorAll(".mob-link").forEach(l => l.addEventListener("click", () => {
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      mobileNav.classList.remove("open");
-    }));
-  </script>
+  <script src="../js/project.js"></script>
 </body>
 </html>
