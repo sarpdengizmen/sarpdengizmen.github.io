@@ -161,13 +161,31 @@
 
     /* ── Hero ─────────────────────────────────────────────────────────────── */
     #hero {
-      min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: var(--nav-h);
+      padding-top: calc(var(--nav-h) + 72px);
+      padding-bottom: 80px;
       border-bottom: 1px solid var(--border);
     }
-    .hero-inner { max-width: 700px; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 64px;
+      width: 100%;
+    }
+    .hero-text { max-width: 600px; }
+    .hero-photo {
+      width: 260px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+    }
 
     .hero-tagline {
       font-size: 0.8125rem;
@@ -315,12 +333,6 @@
     }
 
     .card-body { padding: 20px 22px 22px; }
-    .card-title {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 9px;
-    }
     .card-desc {
       font-size: 0.8125rem;
       color: var(--text-muted);
@@ -330,6 +342,21 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+    .card-title { font-size: 0.9375rem; font-weight: 600; line-height: 1.3; }
+    .card-date {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .card-tags {
       display: flex;
@@ -408,6 +435,9 @@
       .hamburger { display: flex; }
       .tabs { width: 100%; }
       .tab-btn { flex: 1; justify-content: center; padding: 8px 12px; }
+      #hero { padding-top: calc(var(--nav-h) + 40px); padding-bottom: 52px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-photo { width: 160px; }
     }
     @media (max-width: 420px) {
       .hero-name { letter-spacing: -0.02em; }
@@ -444,24 +474,26 @@
   <section id="hero">
     <div class="container">
       <div class="hero-inner">
-        <!-- SWAP: tagline -->
-        <p class="hero-tagline">Mechatronics Engineer &amp; Maker</p>
-        <!-- SWAP: your name -->
-        <h1 class="hero-name">Ege Sarp<br>Dengizmen</h1>
-        <!-- SWAP: 2–3 sentence bio -->
-        <p class="hero-bio">
-          Final-year Mechanical Engineering Master's student specialising in mechatronics
-          and robotics. I build things that move — from ROS-powered pick-and-place robots
-          and inverted pendulums to 3D-printed lamps and award-winning gift mechanisms.
-          I care about making ideas tangible.
-        </p>
-        <a href="#projects" class="btn btn-primary">
-          View Projects
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.75"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="hero-text">
+          <p class="hero-tagline">Mechatronics Engineer &amp; Maker</p>
+          <h1 class="hero-name">Ege Sarp<br>Dengizmen</h1>
+          <p class="hero-bio">
+            Final-year Mechanical Engineering Master's student specialising in mechatronics
+            and robotics. I build things that move — from ROS-powered pick-and-place robots
+            and inverted pendulums to 3D-printed lamps and award-winning gift mechanisms.
+            I care about making ideas tangible.
+          </p>
+          <a href="#projects" class="btn btn-primary">
+            View Projects
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.75"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="hero-photo">
+          <img src="AboutMe/imagesarp.JPEG" alt="Ege Sarp Dengizmen" loading="eager">
+        </div>
       </div>
     </div>
   </section>
@@ -538,8 +570,7 @@
             GitHub
           </a>
 
-          <!-- SWAP: replace href with your LinkedIn URL -->
-          <a href="https://linkedin.com/in/your-username"
+          <a href="https://www.linkedin.com/in/ege-sarp-dengizmen-25390883/"
              target="_blank" rel="noopener noreferrer"
              class="social-link" aria-label="LinkedIn profile">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -552,6 +583,15 @@
                 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             LinkedIn
+          </a>
+
+          <a href="https://makerworld.com/en/@emcdog"
+             target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="MakerWorld profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 2c1.85 0 3.56.63 4.93 1.67L5.67 16.93A8 8 0 0 1 12 4zm0 16a8 8 0 0 1-4.93-1.67L18.33 7.07A8 8 0 0 1 12 20z"/>
+            </svg>
+            MakerWorld
           </a>
         </div>
       </div>
@@ -583,6 +623,7 @@
       {
         title: "Blooming Rose Gift Box",
         slug: "blooming-rose",
+        date: "Feb 2026",
         description:
           "A fully 3D-printed blooming rose gift box built for MakerWorld's Valentine's Day Design Contest, earning the Excellent Participation Award. The rose opens to reveal the gift inside, fusing motion and surprise with lasting utility. Every part is engineered for tool-free, multicolour assembly.",
         tags: ["3D Printing", "Product Design"],
@@ -593,8 +634,21 @@
         },
       },
       {
+        title: "Isaac Game Box",
+        slug: "isaac-game-box",
+        date: "Feb 2026",
+        description:
+          "An all-in-one storage and table organiser for the card game 'The Binding of Isaac: Four Souls'. Every component has a dedicated slot; the box unfolds into a game-ready organiser mid-session. The exterior features laser-engraved wood panelling that echoes the game's rustic, hand-drawn aesthetic.",
+        tags: ["Product Design", "Laser Engraving", "3D Printing"],
+        media: {
+          type: "image",
+          src: "IsaacGameBox/FourSoulsBoxRender.png",
+        },
+      },
+      {
         title: "Desk Lamp",
         slug: "desk-lamp",
+        date: "Dec 2025",
         description:
           "A custom desk lamp where nearly every component is 3D printed — translucent PETG beams are engineered with deliberate print sequences to maximise light diffraction. Users arrange the beams freely to sculpt their own 'topography'. Powered by open-source WLED firmware for full app-based lighting control.",
         tags: ["3D Printing", "IoT", "WLED"],
@@ -604,23 +658,25 @@
           poster: "DeskLamp/DeskLampRender.png",
         },
       },
-      {
-        title: "Isaac Game Box",
-        slug: "isaac-game-box",
-        description:
-          "An all-in-one storage and table organiser for the card game 'The Binding of Isaac: Four Souls'. Every component has a dedicated slot; the box unfolds into a game-ready organiser mid-session. The exterior features laser-engraved wood panelling that echoes the game's rustic, hand-drawn aesthetic.",
-        tags: ["Product Design", "Laser Engraving", "3D Printing"],
-        media: {
-          type: "image",
-          src: "IsaacGameBox/FourSoulsBoxRender.png",
-        },
-      },
     ];
 
     const ENGINEERING_PROJECTS = [
       {
+        title: "Soft Robotics",
+        slug: "soft-robotics",
+        date: "Ongoing",
+        description:
+          "An investigation into soft robotic mechanisms — compliant, flexible-bodied actuators that excel where rigid robots fall short: safe human interaction, delicate manipulation, and adaptive gripping. This project explores soft actuator design, fabrication, and motion characterisation under pneumatic actuation.",
+        tags: ["Robotics", "Soft Actuators"],
+        media: {
+          type: "video",
+          src: "SoftRobotics/MainVideo.mp4",
+        },
+      },
+      {
         title: "MicroROS Pick-and-Place Robot",
         slug: "microros-bot",
+        date: "Jan - Feb 2026",
         description:
           "A differential-drive robot that autonomously finds a red object, picks it up with a servo gripper, and drops it at a fixed target — guided by a ceiling camera and AprilTag pose estimation. Runs micro-ROS on an ESP32 over WiFi, with a ROS 2 Python vision pipeline and a MATLAB/Stateflow state machine orchestrating the sequence.",
         tags: ["ROS 2", "Robotics", "Embedded"],
@@ -632,20 +688,9 @@
         link: "https://github.com/sarpdengizmen/microros_bot",
       },
       {
-        title: "MIDI Robot",
-        slug: "midi-robot",
-        description:
-          "A modular, research-grade mobile platform built as a METU ME462 Capstone project. MIDI features LiDAR, wide-angle camera, IMU, ultrasonic bumpers, and an uninterruptible Makita 18 V supply. Its expandable sensor bays and open software stack make it accessible to everyone from first-year students to graduate researchers.",
-        tags: ["Robotics", "Embedded", "Modular Design"],
-        media: {
-          type: "image",
-          src: "MIDIBOT/MIDIBOT.png",
-        },
-        link: "https://github.com/Bayrakt4rdem/MIDI_ROBOT",
-      },
-      {
         title: "Rotary Inverted Pendulum",
         slug: "rotary-pendulum",
+        date: "Sep – Dec 2025",
         description:
           "A classic nonlinear control benchmark — modelled, identified, and fully controlled. State-feedback pole placement handles balance at the upright equilibrium; an optimal energy-based controller manages swing-up from rest. A Kalman filter provides full-state estimation under measurement noise, validated against both simulation and hardware.",
         tags: ["Control Systems", "State Estimation", "MATLAB"],
@@ -655,19 +700,9 @@
         },
       },
       {
-        title: "Tuned Mass Damper",
-        slug: "tuned-mass-damper",
-        description:
-          "A METU summer research project analysing Tuned Mass Dampers across 2-DOF and 3-DOF configurations with H₂ and H∞ optimisation in MATLAB and MathCAD. The work culminated in a physical demo: a custom TMD tuned to suppress resonance in a test structure, with Arduino data acquisition and Python post-processing confirming the predictions.",
-        tags: ["Vibrations", "MATLAB", "Control"],
-        media: {
-          type: "video",
-          src: "TunedMassDampener/ProjectDemonstration.mp4",
-        },
-      },
-      {
         title: "Mechanical System Identification",
         slug: "mode-analysis",
+        date: "Apr - Jul 2025",
         description:
           "Experimental and computational modal analysis combining FRF extraction from impulse hammer tests with the Ibrahim Time Domain (ITD) method for modal parameter identification. Optimal sensor placement was determined via AutoMAC analysis, and results were validated against a finite element model — demonstrating close agreement between predicted and measured mode shapes.",
         tags: ["Vibrations", "Data Analysis", "FEA"],
@@ -679,6 +714,7 @@
       {
         title: "Vertical Axis Wind Turbine",
         slug: "wind-turbine",
+        date: "Sep 2023 – Jan 2024",
         description:
           "A vertical-axis wind turbine designed from scratch for the ME-407 design course, targeting off-grid urban environments with multi-directional wind capture and straightforward manufacture. The team developed the complete system — from engineering analysis and power transmission to a working prototype testable in the Aerospace Department's wind tunnel.",
         tags: ["Energy", "CAD", "Mechanical Design"],
@@ -689,15 +725,29 @@
         },
       },
       {
-        title: "Soft Robotics",
-        slug: "soft-robotics",
+        title: "Tuned Mass Damper",
+        slug: "tuned-mass-damper",
+        date: "Jul – Aug 2023",
         description:
-          "An investigation into soft robotic mechanisms — compliant, flexible-bodied actuators that excel where rigid robots fall short: safe human interaction, delicate manipulation, and adaptive gripping. This project explores soft actuator design, fabrication, and motion characterisation under pneumatic actuation.",
-        tags: ["Robotics", "Soft Actuators"],
+          "A METU summer research project analysing Tuned Mass Dampers across 2-DOF and 3-DOF configurations with H₂ and H∞ optimisation in MATLAB and MathCAD. The work culminated in a physical demo: a custom TMD tuned to suppress resonance in a test structure, with Arduino data acquisition and Python post-processing confirming the predictions.",
+        tags: ["Vibrations", "MATLAB", "Control"],
         media: {
           type: "video",
-          src: "SoftRobotics/MainVideo.mp4",
+          src: "TunedMassDampener/ProjectDemonstration.mp4",
         },
+      },
+      {
+        title: "MIDI Robot",
+        slug: "midi-robot",
+        date: "Jan – Jun 2023",
+        description:
+          "A modular, research-grade mobile platform built as a METU ME462 Capstone project. MIDI features LiDAR, wide-angle camera, IMU, ultrasonic bumpers, and an uninterruptible Makita 18 V supply. Its expandable sensor bays and open software stack make it accessible to everyone from first-year students to graduate researchers.",
+        tags: ["Robotics", "Embedded", "Modular Design"],
+        media: {
+          type: "image",
+          src: "MIDIBOT/MIDIBOT.png",
+        },
+        link: "https://github.com/Bayrakt4rdem/MIDI_ROBOT",
       },
     ];
 
@@ -724,7 +774,10 @@
         <article class="card">
           <div class="card-media">${buildMediaHtml(project.media)}</div>
           <div class="card-body">
-            <h3 class="card-title">${project.title}</h3>
+            <div class="card-header">
+              <h3 class="card-title">${project.title}</h3>
+              ${project.date ? `<span class="card-date">${project.date}</span>` : ""}
+            </div>
             <p class="card-desc">${project.description}</p>
             <div class="card-tags">${tagsHtml}</div>
           </div>
