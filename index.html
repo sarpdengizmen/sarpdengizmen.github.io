@@ -182,10 +182,12 @@
       border: 2px solid var(--border);
       flex-shrink: 0;
     }
-    .hero-photo img {
-      width: 100%;
-      height: auto;
-    }
+    .hero-photo img { width: 100%; height: auto; }
+
+    /* on desktop, hero-top is just the name group (photo hidden — it's in the right column) */
+    .hero-top { display: block; margin-bottom: 0; }
+    .hero-top .hero-photo { display: none; }
+    .hero-photo-desktop { display: block; }
 
     .hero-tagline {
       font-size: 0.8125rem;
@@ -249,10 +251,10 @@
       margin-bottom: 48px;
     }
     .tab-btn {
-      padding: 8px 22px;
+      padding: 10px 28px;
       border-radius: var(--radius);
-      font-size: 0.875rem;
-      font-weight: 500;
+      font-size: 0.9375rem;
+      font-weight: 600;
       color: var(--text-muted);
       background: none;
       border: none;
@@ -434,10 +436,18 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .tabs { width: 100%; }
-      .tab-btn { flex: 1; justify-content: center; padding: 8px 12px; }
+      .tab-btn { flex: 1; justify-content: center; padding: 10px 12px; }
       #hero { padding-top: calc(var(--nav-h) + 40px); padding-bottom: 52px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .hero-photo { width: 160px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 0; }
+      .hero-photo-desktop { display: none; }
+      .hero-top {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .hero-top .hero-photo { display: block; width: 110px; }
     }
     @media (max-width: 420px) {
       .hero-name { letter-spacing: -0.02em; }
@@ -475,8 +485,15 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-tagline">Mechatronics Engineer &amp; Maker</p>
-          <h1 class="hero-name">Ege Sarp<br>Dengizmen</h1>
+          <div class="hero-top">
+            <div class="hero-name-group">
+              <p class="hero-tagline">Mechatronics Engineer &amp; Maker</p>
+              <h1 class="hero-name">Ege Sarp<br>Dengizmen</h1>
+            </div>
+            <div class="hero-photo">
+              <img src="AboutMe/imagesarp.JPEG" alt="Ege Sarp Dengizmen" loading="eager">
+            </div>
+          </div>
           <p class="hero-bio">
             Final-year Mechanical Engineering Master's student specialising in mechatronics
             and robotics. I build things that move — from ROS-powered pick-and-place robots
@@ -491,7 +508,7 @@
             </svg>
           </a>
         </div>
-        <div class="hero-photo">
+        <div class="hero-photo hero-photo-desktop">
           <img src="AboutMe/imagesarp.JPEG" alt="Ege Sarp Dengizmen" loading="eager">
         </div>
       </div>
