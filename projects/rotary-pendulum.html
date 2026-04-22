@@ -55,58 +55,45 @@
 
         <div class="proj-description">
           <p>
-            The rotary inverted pendulum is a canonical benchmark in control theory — a fundamentally
-            unstable system that must be actively balanced at its upright equilibrium. This project
+            The rotary inverted pendulum is a fundamental benchmark in control theory. This project
             covers the full control engineering pipeline: mathematical modelling, controller design,
             state estimation, and hardware validation on a physical rig.
           </p>
           <p>
             The system consists of a motorised rotating arm driving a freely-pivoting pendulum rod.
-            Left uncontrolled, the pendulum falls immediately. The goal is to drive it to the upright
-            position from rest and hold it there indefinitely in the face of real-world disturbances —
+            The goal is to drive it to the upright
+            position from rest and hold it there indefinitely in the face of real-world disturbances,
             friction, sensor noise, and model uncertainty.
           </p>
 
           <h3>System Modelling</h3>
           <p>
             The equations of motion were derived from Lagrangian mechanics, yielding a coupled
-            nonlinear ODE system in the arm angle and pendulum angle. These were linearised around
-            the unstable upright equilibrium to produce a state-space representation suitable for
-            linear control design. The linearised model was validated against physical measurements
-            and refined for parameter accuracy (motor torque constant, friction coefficients, moments
-            of inertia).
+            nonlinear ODE system in the arm angle and pendulum angle. The model parameters were
+            estimated from experiments like step response and free oscillations. 
           </p>
 
           <h3>Swing-Up Strategy</h3>
           <p>
-            Getting the pendulum from its natural hanging position to the upright requires a nonlinear
-            strategy — linear controllers cannot handle the full range of motion. An energy-based
-            swing-up controller was implemented that pumps energy into the pendulum by modulating
-            the arm velocity in sync with the pendulum's natural oscillation. Once the pendulum
-            reaches near-vertical (within a defined catch window), authority is handed off to the
-            balancing controller. The handoff timing is critical: too early and the linear controller
-            saturates; too late and the pendulum overshoots the catch window.
+            Optimal control feedforward trajectory was computed offline using the identified nonlinear model,
+            while a neighboring LQR controller was designed for the system around the feedforward trajectory to 
+            guard against disturbances and model mismatch during the swing-up phase.
           </p>
 
           <h3>Balancing Controller</h3>
           <p>
-            At the upright equilibrium, a pole-placement controller was designed to assign the
-            closed-loop eigenvalues to target locations in the left-half complex plane. An optimal
-            variant using LQR (Linear Quadratic Regulator) was also implemented, trading off
-            state regulation energy against control effort through the Q and R weighting matrices.
-            The LQR controller was found to give better disturbance rejection with less aggressive
-            control action than the pole-placement design.
+            At the upright equilibrium, a pole-placement controller was designed from the linearised model to assign the
+            closed-loop eigenvalues to target locations in the left-half complex plane. 
           </p>
 
           <h3>State Estimation — Kalman Filter</h3>
           <p>
             The physical rig provides direct measurements of arm angle and pendulum angle (via
-            encoders), but the controller requires angular velocities as well. Numerical
+            encoders), but the controller requires angular velocities for full-state feedback. Numerical
             differentiation of encoder signals amplifies quantisation noise, making full-state
-            feedback from raw sensors impractical. A discrete Kalman filter was designed to fuse
-            the noisy encoder measurements into optimal estimates of the full state vector —
-            position and velocity for both degrees of freedom. The filter covariance matrices were
-            tuned to balance responsiveness against noise rejection.
+            feedback from raw sensors impractical. A discrete Kalman filter was designed derive 
+            celan velocity estiamtes from position measurements. The Kalman filter parameters were tuned
+            empirically.
           </p>
         </div>
 
@@ -120,7 +107,7 @@
           <aside class="proj-sidebar">
           <div class="detail-block">
             <p class="detail-label">Context</p>
-            <p class="detail-value">Control Systems Course Project — METU</p>
+            <p class="detail-value">Control Systems Lab — Polimi</p>
           </div>
           <div class="detail-block">
             <p class="detail-label">Tags</p>

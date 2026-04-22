@@ -55,35 +55,25 @@
 
         <div class="proj-description">
           <p>
-            This desk lamp started as a simple question: what if a lamp wasn't just a functional
-            object but something you shaped to fit your space — and your mood? The result is a
+            This desk lamp was borne from a desire to create a living structure. The result is a
             modular lighting structure built almost entirely from 3D-printed parts, where the user
             defines the form by arranging the light-bearing beams however they choose.
           </p>
           <p>
-            The concept draws from topographic maps — the idea that a terrain can be described by
-            layered contours, each telling part of a larger story. Here, the beams are the contours:
-            stack them tightly and the lamp feels dense and sculptural; spread them wide and it
-            becomes airy and minimal. No configuration is wrong.
+            The concept draws from topogaphy, where the arrangement of beams create a special heightmap 
+            that defines the lamp's character.
+            Stack them tightly and the lamp feels dense and sculptural; spread them wide and it
+            becomes airy and minimal. Every configuration is unique.
           </p>
 
-          <h3>Material Engineering: Translucent PETG</h3>
+          <h3>Slicer Engineering: Translucent PETG</h3>
           <p>
             The beams are printed in translucent PETG, a material chosen specifically for its
-            light-transmitting properties. But raw PETG transmits light in an uneven, blotchy way.
-            The key insight was that print orientation and layer height dramatically affect the
-            optical result — finer layers scatter light more evenly, while specific infill patterns
-            create internal refraction that softens and diffuses the output. Several print sequences
-            were tested before landing on one that produces a consistent, warm glow along the full
-            length of each beam.
-          </p>
-          <p>
-            The base and mounting hardware are printed in matte black PLA, disappearing into the
-            background and keeping the eye on the light. The only non-printed components are the
-            LED strip, power supply, and wiring — everything structural is printed.
+            light-transmitting properties. To maximize the glow, the beams are printed with
+            engineered infill patterns that optimize light diffusion. The result is a soft, even glow along the entire length of each beam.
           </p>
 
-          <h3>WLED: Open-Source Intelligence</h3>
+          <h3>IOT with Open-Source Firmware WLED</h3>
           <p>
             The lamp runs on <a href="https://kno.wled.ge" target="_blank" rel="noopener">WLED</a>,
             an open-source firmware for addressable LED strips. An ESP8266/ESP32 microcontroller
@@ -99,13 +89,6 @@
             integrated into home automation setups like Home Assistant with no additional hardware.
           </p>
 
-          <h3>Assembly</h3>
-          <p>
-            Beams slot into the base via dovetail joints — no tools needed. They can be added,
-            removed, or repositioned in seconds. The LED strip runs inside a channel in the base
-            and feeds up through the beam mounting points. The whole lamp assembles in under ten
-            minutes from a cold print.
-          </p>
         </div>
 
         <div class="proj-right">

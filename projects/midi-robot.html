@@ -56,42 +56,24 @@
         <div class="proj-description">
           <p>
             MIDI is a modular mobile robot platform built as a Capstone project for METU's
-            ME462 course. The name stands for the design philosophy at its core: Modular,
-            Integrated, Durable, and Improvable. The platform was designed not as a one-off
-            demonstration piece, but as a foundation — a robot that anyone from a curious
-            first-year student to a PhD researcher can pick up, extend, and use.
+            ME462 course. The platform was designed to be used as a research and education tool for robotics,
+            with a focus on modularity, ease of use, and real-world applicability.
           </p>
           <p>
             The team — Ege Sarp Dengizmen, Erdem Bayraktar, Muhammed Ömer Yiğit, Omar Habib,
-            and Seçkin Eren Yetim — designed and manufactured MIDI with access to METU's ROMER
-            and Micromanufacturing laboratories.
-          </p>
-
-          <h3>Mechanical Platform</h3>
-          <p>
-            MIDI is designed to carry payloads up to 15 kg without structural compromise. The
-            chassis uses a stacked-floor architecture — additional sensor floors can be bolted
-            on without modifying the base structure. The four-corner bumper system acts both as
-            collision sensors and as mechanical springs, absorbing low-speed impacts that would
-            otherwise damage the chassis or sensors.
-          </p>
-          <p>
-            Manufacturing was kept intentional: every bracket, mount, and structural member was
-            designed for the specific capabilities of the METU Micromanufacturing Lab — laser
-            cutting, CNC milling, and FDM printing. The goal was a robot that could be
-            reproduced by any reasonably equipped university lab.
+            and Seçkin Eren Yetim — designed and manufactured MIDI in METU ROMER lab.
           </p>
 
           <h3>Sensor Suite</h3>
           <p>
-            The base configuration ships with a comprehensive sensor suite for indoor navigation
+            The base configuration includes a comprehensive sensor suite for indoor navigation
             and research:
           </p>
           <ul>
             <li><strong style="color: var(--text);">LiDAR</strong> — 360° planar scan for obstacle avoidance and SLAM</li>
             <li><strong style="color: var(--text);">Wide-angle camera</strong> — visual perception and object detection</li>
-            <li><strong style="color: var(--text);">IMU</strong> — attitude and acceleration data for state estimation</li>
-            <li><strong style="color: var(--text);">4× Ultrasonic sensors</strong> — short-range obstacle detection at the chassis corners</li>
+            <li><strong style="color: var(--text);">IMU</strong> — orientation and acceleration data </li>
+            <li><strong style="color: var(--text);">4× Ultrasonic sensors</strong> — short-range distance sensors </li>
             <li><strong style="color: var(--text);">4× Bumper switches</strong> — contact detection for collision recovery</li>
           </ul>
           <p>
@@ -102,20 +84,15 @@
           <h3>Power System</h3>
           <p>
             MIDI runs on an 18 V Makita battery — chosen for its wide availability, hot-swap
-            capability, and the fact that battery packs and chargers are already present in most
-            university workshops. A dedicated UPS module protects the Raspberry Pi from voltage
+            capability. A dedicated UPS module protects the Raspberry Pi from voltage
             sags and sudden disconnection, preventing filesystem corruption during hard shutdowns.
-            Power is distributed through a fused terminal block to each subsystem independently.
           </p>
 
           <h3>Software and Programmability</h3>
           <p>
             The onboard computer is a Raspberry Pi running ROS 2, with Python as the primary
-            user-facing language. The architecture was deliberately chosen to lower the barrier
-            to entry: a student who knows basic Python can write a behaviour, test it in
-            simulation, and deploy it on real hardware within a single lab session. For expert
-            users, the same platform supports C++ nodes, custom firmware on the motor drivers,
-            and integration with external GPU compute for vision-intensive tasks.
+            user-facing language. The architecture was deliberately designed to lower the barrier
+            to entry: a student who knows basic Python can write a behaviour and deploy it on real hardware within a single lab session.
           </p>
         </div>
 

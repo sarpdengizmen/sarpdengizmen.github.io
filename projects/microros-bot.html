@@ -62,8 +62,7 @@
           </p>
           <p>
             The challenge was integrating perception, real-time low-level control, and high-level
-            task planning across three distinct computational tiers while keeping the total system
-            latency low enough for reliable execution.
+            task planning across three distinct computational tiers.
           </p>
 
           <h3>System Architecture</h3>
@@ -75,7 +74,7 @@
               <strong style="color: var(--text);">ESP32 firmware (micro-ROS / FreeRTOS)</strong> —
               handles hard real-time motor PI control, quadrature encoder sampling at 1 kHz,
               and servo PWM generation. Communicates over UDP WiFi to the micro-ROS Agent running
-              on a PC, bridging to the main DDS network.
+              on a PC, bridging to the main ROS network.
             </li>
             <li>
               <strong style="color: var(--text);">PC Python nodes (ROS 2 / OpenCV)</strong> —
@@ -97,25 +96,14 @@
             the metric coordinate frame via homography. The robot carries AprilTag ID 4 on top,
             giving the ceiling-mounted USB camera full 3-DOF pose estimation (x, y, heading) of
             the robot at all times. This architecture removes the need for onboard sensors for
-            self-localisation — the world is instrumented, not the robot.
+            self-localisation.
           </p>
 
           <h3>Low-Level Control</h3>
           <p>
             Each wheel is driven by a DRV8833 H-bridge module and controlled by a discrete-time
             PI controller running on the ESP32 at 100 Hz. Encoder counts from quadrature encoders
-            (420 CPR) are used to close the velocity loop independently on each side. Differential
-            steering is achieved by commanding different target velocities per wheel from the
-            trajectory regulation node. The closed-loop response was tuned empirically to give
-            sub-centimetre steady-state error on straight-line runs.
-          </p>
-
-          <h3>Gripper</h3>
-          <p>
-            The gripper uses two hobby servos — one for wrist rotation (orienting the gripper
-            to approach the object from above) and one for the jaw. Both are driven by PWM directly
-            from the ESP32. The jaw geometry was designed to self-centre small cylindrical objects
-            and provides enough compliance to handle ±5 mm positional error without misgripping.
+            (420 CPR) are used to close the velocity loop independently on each side.
           </p>
         </div>
 
@@ -163,9 +151,9 @@
 
       <nav class="proj-nav">
     <div class="container">
-      <a href="isaac-game-box.html" class="nav-proj-link">
+      <a href="mini-fan.html" class="nav-proj-link">
         <span class="nav-proj-dir">← Previous</span>
-        <span class="nav-proj-title">Isaac Game Box</span>
+        <span class="nav-proj-title">Mini Hand Fan</span>
       </a>
       <a href="desk-lamp.html" class="nav-proj-link next">
         <span class="nav-proj-dir">Next →</span>

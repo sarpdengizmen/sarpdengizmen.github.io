@@ -61,11 +61,6 @@
             structure using impact hammer testing, frequency response function extraction, and
             time-domain system identification to produce a validated modal model.
           </p>
-          <p>
-            The result is more than a set of numbers: modal parameters are the fingerprint of a
-            structure's dynamic behaviour. They underpin resonance avoidance in design, structural
-            health monitoring, and the correlation between finite element models and physical reality.
-          </p>
 
           <h3>Frequency Response Function Extraction</h3>
           <p>
@@ -73,7 +68,7 @@
             and accelerometer responses were recorded at fixed measurement points. The FRFs (ratio
             of output acceleration to input force in the frequency domain) were computed via the
             H1 estimator, which minimises the effect of output noise. Coherence was monitored
-            across all measurements to flag poor impact quality and ensure data integrity before
+            across all measurements to ensure data integrity before
             any identification step.
           </p>
           <p>
@@ -90,29 +85,13 @@
             a generalised eigenvalue problem to extract complex eigenvalues (from which natural
             frequencies and damping ratios are derived) and eigenvectors (mode shapes).
           </p>
-          <p>
-            Spurious computational modes were separated from physical modes using a stabilisation
-            diagram: poles that remain stable across increasing model orders are accepted as
-            physical; those that drift or appear erratically are rejected.
-          </p>
 
           <h3>AutoMAC Validation</h3>
           <p>
-            The Modal Assurance Criterion (MAC) was used to validate the identified mode shapes.
-            The AutoMAC matrix — the MAC of each identified mode against all other identified modes —
-            should ideally be an identity matrix: diagonal entries near 1.0 (each mode correlates
-            perfectly with itself) and off-diagonal entries near 0 (modes are linearly independent).
-            Elevated off-diagonal values indicate spatial aliasing or contamination between modes.
-          </p>
-
-          <h3>FE Model Correlation</h3>
-          <p>
-            The experimentally extracted natural frequencies and mode shapes were compared against
-            a finite element model of the structure. Frequency discrepancies were used to guide
-            model updating — adjusting material properties and boundary condition stiffness
-            parameters to bring the FE model into agreement with physical measurements. The
-            cross-MAC between experimental and FE modes confirms that the mode shapes are
-            correctly paired before frequency comparisons are made.
+            The AutoMAC was used to validate sensor placements prior to the experiments 
+            to ensure proper sensor placement for the total identification of all mode shapes.
+            After identification, the MAC was also used to confirm the experimentally identified 
+            mode shapes are in line with the finite element modal analysis results.
           </p>
         </div>
 

@@ -55,8 +55,8 @@
 
         <div class="proj-description">
           <p>
-            This project is a Darrieus-type vertical axis wind turbine (VAWT) designed, built,
-            and tested as part of the ME-407 Energy Systems course at METU. The design targets
+            This project is a mixede-type vertical axis wind turbine (VAWT) designed, built,
+            and tested as part of the ME-407 final year design course at METU. The design targets
             the urban and near-urban environment — where wind is turbulent, directionally variable,
             and often arriving at low speeds — conditions where horizontal-axis turbines struggle
             and VAWTs have a structural advantage.
@@ -70,38 +70,39 @@
 
           <h3>Aerodynamic Design</h3>
           <p>
-            The blade profile was selected through a literature survey of NACA aerofoil sections
-            optimised for low tip-speed-ratio operation — the regime typical of urban wind. Blade
-            geometry (chord length, pitch angle, aspect ratio) was sized using the Double Multiple
-            Streamtube (DMST) model, which divides the rotor into upstream and downstream half-cycles
-            and applies blade element theory to each separately. The DMST output was validated
-            against published experimental data for similar configurations before finalising the
-            geometry.
-          </p>
-          <p>
-            Blade count and solidity were traded off: higher solidity improves low-speed startup
-            torque at the cost of peak efficiency. A three-blade configuration was chosen as the
-            best balance for the target operating range.
+            The expected performance of the turbine was predicted using the Double-Multiple Streamtube (DMST)
+            aerodynamic model, which divides the flow into multiple streamtubes and applies blade element theory
+            to compute the forces on each blade element. The analysis was also validated with CFD simulations.
           </p>
 
-          <h3>Structural Design and Manufacturing</h3>
+          <h3>Structural Design and Analysis</h3>
           <p>
-            The blades were manufactured from laser-cut aluminium sheet, formed over a jig to
-            maintain the aerofoil profile, and reinforced with internal ribs to resist torsional
+            The turbine's structural design was informed by the aerodynamic loading predictions. Finite 
+            element analysis (FEA) was performed to ensure the blades and shaft could withstand the expected
+            stresses. The design was iterated to balance strength, weight, and manufacturability.
+          </p>
+
+          <h3>Manufacturing</h3>
+          <p>
+            The blades were manufactured from wire cut foam, and reinforced with internal ribs and spars to resist
             deformation under aerodynamic load. The central shaft and arm assembly are machined
             steel, selected for the fatigue resistance required in a continuously rotating system.
             All joints were designed with access in mind — the turbine can be fully disassembled
             in the lab without special tools.
           </p>
 
+          <h3>Power Generation System and Safety</h3>
+          <p>
+            The turbine was coupled to a permanent magnet DC generator through a belt drive system, to achieve
+            the necessary speed for efficient power generation. The electrical output was conditioned through
+            a solar charge controller to regulate voltage and current, allowing for safe and controlled charging 
+            of a 12V lead-acid battery. The system was also instrumented with microcontroller controlled relay system
+            that shorts the DC motor achieveing braking torque in the case of dangerously high rotational speeds.
+
           <h3>Wind Tunnel Testing</h3>
           <p>
             The completed turbine was tested in METU's wind tunnel facility across a range of wind
-            speeds. Power output (torque × angular velocity) was measured via a braking dynamometer,
-            and the power coefficient Cp was calculated as a function of tip-speed ratio (TSR).
-            The Cp–TSR curve was compared against the DMST predictions. Measured peak Cp fell
-            within the expected range, with deviations attributed to strut drag and tip losses
-            not captured in the simplified analytical model.
+            speeds. 
           </p>
         </div>
 
