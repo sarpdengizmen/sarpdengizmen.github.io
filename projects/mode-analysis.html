@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="mode-analysis">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Engineering Projects</span>
-        <span class="proj-date">Apr - Jul 2025</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">Structural Dynamics</span>
-        <span class="tag">Signal Processing</span>
-        <span class="tag">FEM</span>
-      </div>
-      <h1 class="proj-title">Experimental Mode Analysis</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,84 +46,16 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            Experimental modal analysis (EMA) is the process of identifying a structure's natural
-            frequencies, damping ratios, and mode shapes directly from measured vibration data —
-            without requiring a complete analytical model. This project applies EMA to a physical
-            structure using impact hammer testing, frequency response function extraction, and
-            time-domain system identification to produce a validated modal model.
-          </p>
-
-          <h3>Frequency Response Function Extraction</h3>
-          <p>
-            The structure was excited with an instrumented impact hammer at multiple locations,
-            and accelerometer responses were recorded at fixed measurement points. The FRFs (ratio
-            of output acceleration to input force in the frequency domain) were computed via the
-            H1 estimator, which minimises the effect of output noise. Coherence was monitored
-            across all measurements to ensure data integrity before
-            any identification step.
-          </p>
-          <p>
-            Multiple impacts per location were averaged to improve the signal-to-noise ratio.
-            The resulting FRF matrix reveals peaks at the structure's natural frequencies and
-            phase information that encodes the mode shape contributions at each measurement point.
-          </p>
-
-          <h3>Ibrahim Time Domain (ITD) Method</h3>
-          <p>
-            Modal parameters were extracted using the Ibrahim Time Domain method — a classical
-            algorithm that identifies poles of the structural system from free-decay response
-            data. The method constructs a data matrix from sampled impulse responses and solves
-            a generalised eigenvalue problem to extract complex eigenvalues (from which natural
-            frequencies and damping ratios are derived) and eigenvectors (mode shapes).
-          </p>
-
-          <h3>AutoMAC Validation</h3>
-          <p>
-            The AutoMAC was used to validate sensor placements prior to the experiments 
-            to ensure proper sensor placement for the total identification of all mode shapes.
-            After identification, the MAC was also used to confirm the experimentally identified 
-            mode shapes are in line with the finite element modal analysis results.
-          </p>
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
-            <video autoplay muted loop playsinline preload="metadata">
+            <video autoplay muted loop playsinline preload="metadata" poster="../ModeAnalysis/MainVideo.jpg">
               <source src="../ModeAnalysis/MainVideo.mp4">
             </video>
           </div>
           <div class="proj-gallery-auto" data-folder="../ModeAnalysis"></div>
-          <aside class="proj-sidebar">
-          <div class="detail-block">
-            <p class="detail-label">Context</p>
-            <p class="detail-value">Vibrations & Structural Dynamics Course — METU</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tags</p>
-            <div class="detail-tags">
-              <span class="tag">Structural Dynamics</span>
-              <span class="tag">Signal Processing</span>
-              <span class="tag">FEM</span>
-              <span class="tag">Modal Analysis</span>
-              <span class="tag">ITD Method</span>
-            </div>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Methods</p>
-            <p class="detail-value">Impact hammer testing · FRF extraction (H1) · ITD · AutoMAC · FE model correlation</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tools</p>
-            <p class="detail-value">MATLAB · FE software</p>
-          </div>
-          <a href="../ModeAnalysis/Project Presentation.pdf"
-             target="_blank" rel="noopener" class="sidebar-link">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
-            View Presentation (PDF)
-          </a>
-          </aside>
+          <aside class="proj-sidebar"></aside>
         </div>
       </div>
     </div>
@@ -151,6 +76,7 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>

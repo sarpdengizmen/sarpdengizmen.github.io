@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="desk-lamp">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Design Works</span>
-        <span class="proj-date">Dec 2025</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">3D Printing</span>
-        <span class="tag">IoT</span>
-        <span class="tag">WLED</span>
-      </div>
-      <h1 class="proj-title">Desk Lamp</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,43 +46,7 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            This desk lamp was borne from a desire to create a living structure. The result is a
-            modular lighting structure built almost entirely from 3D-printed parts, where the user
-            defines the form by arranging the light-bearing beams however they choose.
-          </p>
-          <p>
-            The concept draws from topogaphy, where the arrangement of beams create a special heightmap 
-            that defines the lamp's character.
-            Stack them tightly and the lamp feels dense and sculptural; spread them wide and it
-            becomes airy and minimal. Every configuration is unique.
-          </p>
-
-          <h3>Slicer Engineering: Translucent PETG</h3>
-          <p>
-            The beams are printed in translucent PETG, a material chosen specifically for its
-            light-transmitting properties. To maximize the glow, the beams are printed with
-            engineered infill patterns that optimize light diffusion. The result is a soft, even glow along the entire length of each beam.
-          </p>
-
-          <h3>IOT with Open-Source Firmware WLED</h3>
-          <p>
-            The lamp runs on <a href="https://kno.wled.ge" target="_blank" rel="noopener">WLED</a>,
-            an open-source firmware for addressable LED strips. An ESP8266/ESP32 microcontroller
-            hosts a local web server and can connect to a home network, giving full control through
-            any browser or the WLED mobile app. From there, the lamp supports hundreds of built-in
-            effects — from solid static colour to reactive audio visualisation — and the user can
-            save custom presets or schedule automations.
-          </p>
-          <p>
-            This makes the lamp genuinely "living": it changes character throughout the day. A slow,
-            warm amber in the evening is a few taps away from a crisp white for focused work, or a
-            cycling colour palette for ambiance. The open ecosystem also means the lamp can be
-            integrated into home automation setups like Home Assistant with no additional hardware.
-          </p>
-
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
@@ -98,34 +55,7 @@
             </video>
           </div>
           <div class="proj-gallery-auto" data-folder="../DeskLamp"></div>
-          <aside class="proj-sidebar">
-          <div class="detail-block">
-            <p class="detail-label">Type</p>
-            <p class="detail-value">Personal Hobby Project</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tags</p>
-            <div class="detail-tags">
-              <span class="tag">3D Printing</span>
-              <span class="tag">IoT</span>
-              <span class="tag">WLED</span>
-              <span class="tag">Product Design</span>
-              <span class="tag">Lighting</span>
-            </div>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Electronics</p>
-            <p class="detail-value">ESP32 · WS2812B LED strip · 5 V PSU</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Materials</p>
-            <p class="detail-value">Translucent PETG (beams) · Matte Black PLA (base)</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tools</p>
-            <p class="detail-value">Fusion 360 · Bambu Studio · WLED firmware</p>
-          </div>
-          </aside>
+          <aside class="proj-sidebar"></aside>
         </div>
       </div>
     </div>
@@ -133,19 +63,20 @@
 
       <nav class="proj-nav">
     <div class="container">
-      <a href="microros-bot.html" class="nav-proj-link">
+      <a href="snowboard-hanger.html" class="nav-proj-link">
         <span class="nav-proj-dir">← Previous</span>
-        <span class="nav-proj-title">MicroROS Pick-and-Place Robot</span>
+        <span class="nav-proj-title">Snowboard Hanger</span>
       </a>
-      <a href="rotary-pendulum.html" class="nav-proj-link next">
+      <a href="mini-fan.html" class="nav-proj-link next">
         <span class="nav-proj-dir">Next →</span>
-        <span class="nav-proj-title">Rotary Inverted Pendulum</span>
+        <span class="nav-proj-title">Mini Hand Fan</span>
       </a>
     </div>
   </nav>
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>

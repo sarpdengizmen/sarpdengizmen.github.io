@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ege Sarp Dengizmen — Portfolio</title>
-  <meta name="description" content="Personal portfolio of Ege Sarp Dengizmen — Mechatronics Engineer and Maker." />
+  <meta name="description" content="Portfolio of Ege Sarp Dengizmen, mechatronics engineer: CAD, autonomous robotics, machine learning, control systems, 3D printing and embedded integration." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -548,7 +548,7 @@
         <div class="hero-text">
           <div class="hero-top">
             <div class="hero-name-group">
-              <p class="hero-tagline">Mechatronics Engineer &amp; Maker</p>
+              <p class="hero-tagline">Mechatronics Engineer · Concept to Prototype</p>
               <h1 class="hero-name">Ege Sarp<br>Dengizmen</h1>
             </div>
             <div class="hero-photo">
@@ -556,10 +556,13 @@
             </div>
           </div>
           <p class="hero-bio">
-            Final-year Mechanical Engineering Master's student specialising in mechatronics
-            and robotics. I build things that move — from ROS-powered pick-and-place robots
-            and inverted pendulums to 3D-printed lamps and award-winning gift mechanisms.
-            I care about making ideas tangible.
+            Final-year Mechanical Engineering Master's student at Politecnico di Milano,
+            with a Mechanical Engineering BSc from METU. I work end to end on real-time
+            control systems and electromechanical prototypes: control and estimation with
+            LQR, Kalman filtering and optimal control, embedded firmware on ESP32 and
+            Raspberry Pi, reinforcement learning in Isaac Sim, and the CAD and 3D printing
+            that gets the hardware built. My thesis is on reinforcement learning for
+            loco-manipulation on a quadruped.
           </p>
           <a href="#projects" class="btn btn-primary">
             View Projects
@@ -686,173 +689,8 @@
 
 
   <!-- ── Project Data & Logic ───────────────────────────────────────────── -->
+  <script src="content/projects.js"></script>
   <script>
-    // =========================================================
-    //  PROJECT DATA
-    //  To add, remove, or edit projects: update these arrays.
-    //
-    //  media.type   : "video" | "image" | "gif"
-    //  media.src    : path relative to index.html
-    //  media.poster : (optional) static frame shown before video plays
-    //  link         : (optional) external URL shown on card (not yet wired to UI)
-    // =========================================================
-
-    const DESIGN_PROJECTS = [
-      {
-        title: "Blooming Rose Gift Box",
-        slug: "blooming-rose",
-        date: "Feb 2026",
-        description:
-          "A fully 3D-printed blooming rose gift box built for MakerWorld's Valentine's Day Design Contest, earning the Excellent Participation Award. The rose opens to reveal the gift inside, fusing motion and surprise with lasting utility. Every part is engineered for tool-free, multicolour assembly.",
-        tags: ["3D Printing", "Product Design"],
-        media: {
-          type: "video",
-          src: "BloomingRose/BloomingRose.MOV",
-          poster: "BloomingRose/BloomingRose.png",
-        },
-      },
-      {
-        title: "Isaac Game Box",
-        slug: "isaac-game-box",
-        date: "Feb 2026",
-        description:
-          "An all-in-one storage and table organiser for the card game 'The Binding of Isaac: Four Souls'. The box trasforms into a game-ready organiser mid-session.",
-        tags: ["Product Design", "Laser Engraving", "3D Printing"],
-        media: {
-          type: "image",
-          src: "IsaacGameBox/FourSoulsBoxRender.png",
-        },
-      },
-      {
-        title: "Desk Lamp",
-        slug: "desk-lamp",
-        date: "Dec 2025",
-        description:
-          "A custom desk lamp where nearly every component is 3D printed — translucent PETG beams are engineered with deliberate print sequences to maximise light diffraction. Users arrange the beams freely to sculpt their own 'topography'. Powered by open-source WLED firmware for full app-based lighting control.",
-        tags: ["3D Printing", "IoT", "WLED"],
-        media: {
-          type: "video",
-          src: "DeskLamp/MainVideo.mp4",
-          poster: "DeskLamp/DeskLampRender.png",
-        },
-      },
-      {
-        title: "Snowboard Hanger",
-        slug: "snowboard-hanger",
-        date: "Feb 2026",
-        description:
-          "A wall-mounted snowboard hanger designed in Fusion 360 and printed with Bambu Studio, featuring two illustrated faceplate variants — a mountain panorama and an ocean-waves graphic.",
-        tags: ["3D Printing", "Product Design"],
-        media: {
-          type: "image",
-          src: "OtherDesigns/SnowboardHanger_Mountain.png",
-        },
-      },
-      {
-        title: "Mini Hand Fan",
-        slug: "mini-fan",
-        date: "2024",
-        description:
-          "A compact handheld fan with an integrated rechargeable battery and USB-C charging port, designed in Fusion 360 and printed with Bambu Studio.",
-        tags: ["3D Printing", "Product Design", "Electronics"],
-        media: {
-          type: "image",
-          src: "OtherDesigns/MiniFan.png",
-        },
-      },
-    ];
-
-    const ENGINEERING_PROJECTS = [
-      {
-        title: "Soft Robotics",
-        slug: "soft-robotics",
-        date: "Ongoing",
-        description:
-          "An investigation into compliant soft robotic mechanisms, flexible-bodied actuators that excel where rigid robots fall short: safe human interaction, delicate manipulation, and adaptive gripping. This project explores soft actuator design, fabrication, and motion characterisation.",
-        tags: ["Robotics", "Soft Actuators"],
-        media: {
-          type: "video",
-          src: "SoftRobotics/MainVideo.mp4",
-        },
-      },
-      {
-        title: "MicroROS Pick-and-Place Robot",
-        slug: "microros-bot",
-        date: "Jan - Feb 2026",
-        description:
-          "A differential-drive robot that autonomously finds a red object, picks it up with a servo gripper, and drops it at a fixed target — guided by a ceiling camera and AprilTag pose estimation. Runs micro-ROS on an ESP32 over WiFi, with a ROS 2 Python vision pipeline and a MATLAB/Stateflow state machine orchestrating the sequence.",
-        tags: ["ROS 2", "Robotics", "Embedded"],
-        media: {
-          type: "video",
-          src: "MicroRosBot/Operation_Video.mp4",
-          poster: "MicroRosBot/RobotImage.JPEG",
-        },
-        link: "https://github.com/sarpdengizmen/microros_bot",
-      },
-      {
-        title: "Rotary Inverted Pendulum",
-        slug: "rotary-pendulum",
-        date: "Sep – Dec 2025",
-        description:
-          "A classic nonlinear control benchmark — modelled, identified, and fully controlled. State-feedback pole placement handles balance at the upright equilibrium; an optimal feedforward and neighboring control manages swing-up from rest. A Kalman filter provides full-state estimation under measurement noise, validated against both simulation and hardware.",
-        tags: ["Control Systems", "State Estimation", "MATLAB"],
-        media: {
-          type: "video",
-          src: "RotaryInvertedPendulum/InvPendulum.MOV",
-        },
-      },
-      {
-        title: "Mechanical System Identification",
-        slug: "mode-analysis",
-        date: "Apr - Jul 2025",
-        description:
-          "Experimental and computational modal analysis combining FRF extraction from impulse hammer tests with the Ibrahim Time Domain (ITD) method for modal parameter identification. Optimal sensor placement was determined via AutoMAC analysis, and results were validated against a finite element model — demonstrating close agreement between predicted and measured mode shapes.",
-        tags: ["Vibrations", "Data Analysis", "FEA"],
-        media: {
-          type: "video",
-          src: "ModeAnalysis/MainVideo.mp4",
-        },
-      },
-      {
-        title: "MIDI Robot",
-        slug: "midi-robot",
-        date: "Jan – Jun 2024",
-        description:
-          "A modular, research-grade mobile platform built as a METU ME462 Capstone project. MIDI features LiDAR, wide-angle camera, IMU, ultrasonic sensors, bumpers, and an uninterruptible Makita 18 V supply. Its expandable sensor bays and open software stack make it accessible to everyone from first-year students to graduate researchers.",
-        tags: ["Robotics", "Embedded", "Modular Design"],
-        media: {
-          type: "image",
-          src: "MIDIBOT/MIDIBOT.png",
-        },
-        link: "https://github.com/Bayrakt4rdem/MIDI_ROBOT",
-      },
-      {
-        title: "Vertical Axis Wind Turbine",
-        slug: "wind-turbine",
-        date: "Sep 2023 – Jan 2024",
-        description:
-          "A vertical-axis wind turbine designed from scratch for the ME-407 design course, targeting off-grid urban environments with multi-directional wind capture and straightforward manufacture. The team developed the complete system — from engineering analysis and power transmission to a working prototype tested in the Aerospace Department's wind tunnel.",
-        tags: ["Energy", "CAD", "Mechanical Design"],
-        media: {
-          type: "video",
-          src: "WindTurbine/MainVideo.mp4",
-          poster: "WindTurbine/WindTurbine.png",
-        },
-      },
-      {
-        title: "Tuned Mass Damper",
-        slug: "tuned-mass-damper",
-        date: "Jul – Aug 2023",
-        description:
-          "A METU summer research project analysing Tuned Mass Dampers across 2-DOF and 3-DOF configurations with H₂ and H∞ optimisation in MATLAB and MathCAD. The work culminated in a physical demo: a custom TMD tuned to suppress resonance in a test structure, with Arduino data acquisition and Python post-processing confirming the predictions.",
-        tags: ["Vibrations", "MATLAB", "Control"],
-        media: {
-          type: "video",
-          src: "TunedMassDampener/ProjectDemonstration.mp4",
-        },
-      },
-    ];
-
 
     // =========================================================
     //  CARD BUILDER
@@ -869,7 +707,7 @@
     }
 
     function buildCard(project) {
-      const tagsHtml = project.tags
+      const tagsHtml = project.cardTags
         .map(t => `<span class="tag">${t}</span>`)
         .join("");
       const inner = `
@@ -880,7 +718,7 @@
               <h3 class="card-title">${project.title}</h3>
               ${project.date ? `<span class="card-date">${project.date}</span>` : ""}
             </div>
-            <p class="card-desc">${project.description}</p>
+            <p class="card-desc">${project.card}</p>
             <div class="card-tags">${tagsHtml}</div>
           </div>
         </article>`;
@@ -894,8 +732,10 @@
         projects.map(buildCard).join("");
     }
 
-    renderGrid(ENGINEERING_PROJECTS, "grid-engineering");
-    renderGrid(DESIGN_PROJECTS,      "grid-design");
+    const byCategory = c => PROJECTS.filter(p => p.category === c);
+
+    renderGrid(byCategory("engineering"), "grid-engineering");
+    renderGrid(byCategory("design"),      "grid-design");
 
 
     // =========================================================

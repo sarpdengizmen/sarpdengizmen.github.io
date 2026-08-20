@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="mini-fan">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Design Works</span>
-        <span class="proj-date">2024</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">3D Printing</span>
-        <span class="tag">Product Design</span>
-        <span class="tag">Electronics</span>
-      </div>
-      <h1 class="proj-title">Mini Hand Fan</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,43 +46,13 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            A compact handheld fan designed to be fully self-contained — the handle houses a rechargeable
-            battery and a USB-C charging port, so no separate power bank is needed.
-          </p>
-          <p>
-            The housing, blade guard, and handle were all modelled in Fusion 360 and printed with Bambu Studio.
-            The electronics are integrated cleanly into the handle geometry without exposed wiring.
-          </p>
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
             <img src="../OtherDesigns/MiniFan.png" alt="Mini hand fan" loading="eager">
           </div>
-          <aside class="proj-sidebar">
-            <div class="detail-block">
-              <p class="detail-label">Type</p>
-              <p class="detail-value">Personal Project</p>
-            </div>
-            <div class="detail-block">
-              <p class="detail-label">Tags</p>
-              <div class="detail-tags">
-                <span class="tag">3D Printing</span>
-                <span class="tag">Product Design</span>
-                <span class="tag">Electronics</span>
-              </div>
-            </div>
-            <div class="detail-block">
-              <p class="detail-label">Features</p>
-              <p class="detail-value">Rechargeable battery · USB-C charging</p>
-            </div>
-            <div class="detail-block">
-              <p class="detail-label">Tools</p>
-              <p class="detail-value">Fusion 360 · Bambu Studio</p>
-            </div>
-          </aside>
+          <aside class="proj-sidebar"></aside>
         </div>
       </div>
     </div>
@@ -97,19 +60,20 @@
 
   <nav class="proj-nav">
     <div class="container">
-      <a href="snowboard-hanger.html" class="nav-proj-link">
+      <a href="desk-lamp.html" class="nav-proj-link">
         <span class="nav-proj-dir">← Previous</span>
-        <span class="nav-proj-title">Snowboard Hanger</span>
+        <span class="nav-proj-title">Desk Lamp</span>
       </a>
-      <a href="microros-bot.html" class="nav-proj-link next">
+      <a href="loco-manipulation.html" class="nav-proj-link next">
         <span class="nav-proj-dir">Next →</span>
-        <span class="nav-proj-title">MicroROS Pick-and-Place Robot</span>
+        <span class="nav-proj-title">Quadrupedal Loco-Manipulation</span>
       </a>
     </div>
   </nav>
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>

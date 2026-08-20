@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="rotary-pendulum">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Engineering Projects</span>
-        <span class="proj-date">Sep – Dec 2025</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">Control Systems</span>
-        <span class="tag">State Estimation</span>
-        <span class="tag">MATLAB</span>
-      </div>
-      <h1 class="proj-title">Rotary Inverted Pendulum</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,95 +46,25 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            The rotary inverted pendulum is a fundamental benchmark in control theory. This project
-            covers the full control engineering pipeline: mathematical modelling, controller design,
-            state estimation, and hardware validation on a physical rig.
-          </p>
-          <p>
-            The system consists of a motorised rotating arm driving a freely-pivoting pendulum rod.
-            The goal is to drive it to the upright
-            position from rest and hold it there indefinitely in the face of real-world disturbances,
-            friction, sensor noise, and model uncertainty.
-          </p>
-
-          <h3>System Modelling</h3>
-          <p>
-            The equations of motion were derived from Lagrangian mechanics, yielding a coupled
-            nonlinear ODE system in the arm angle and pendulum angle. The model parameters were
-            estimated from experiments like step response and free oscillations. 
-          </p>
-
-          <h3>Swing-Up Strategy</h3>
-          <p>
-            Optimal control feedforward trajectory was computed offline using the identified nonlinear model,
-            while a neighboring LQR controller was designed for the system around the feedforward trajectory to 
-            guard against disturbances and model mismatch during the swing-up phase.
-          </p>
-
-          <h3>Balancing Controller</h3>
-          <p>
-            At the upright equilibrium, a pole-placement controller was designed from the linearised model to assign the
-            closed-loop eigenvalues to target locations in the left-half complex plane. 
-          </p>
-
-          <h3>State Estimation — Kalman Filter</h3>
-          <p>
-            The physical rig provides direct measurements of arm angle and pendulum angle (via
-            encoders), but the controller requires angular velocities for full-state feedback. Numerical
-            differentiation of encoder signals amplifies quantisation noise, making full-state
-            feedback from raw sensors impractical. A discrete Kalman filter was designed derive 
-            celan velocity estiamtes from position measurements. The Kalman filter parameters were tuned
-            empirically.
-          </p>
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
-            <video autoplay muted loop playsinline preload="metadata">
-              <source src="../RotaryInvertedPendulum/InvPendulum.MOV">
+            <video autoplay muted loop playsinline preload="metadata" poster="../RotaryInvertedPendulum/InvPendulum.jpg">
+              <source src="../RotaryInvertedPendulum/InvPendulum.mp4">
             </video>
           </div>
           <div class="proj-gallery-auto" data-folder="../RotaryInvertedPendulum"></div>
-          <aside class="proj-sidebar">
-          <div class="detail-block">
-            <p class="detail-label">Context</p>
-            <p class="detail-value">Control Systems Lab — Polimi</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tags</p>
-            <div class="detail-tags">
-              <span class="tag">Control Systems</span>
-              <span class="tag">State Estimation</span>
-              <span class="tag">MATLAB</span>
-              <span class="tag">LQR</span>
-              <span class="tag">Kalman Filter</span>
-            </div>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Methods</p>
-            <p class="detail-value">Lagrangian modelling · Pole placement · LQR · Kalman filter · Energy-based swing-up</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tools</p>
-            <p class="detail-value">MATLAB · Simulink</p>
-          </div>
-          <a href="../RotaryInvertedPendulum/ProjectReport.pdf"
-             target="_blank" rel="noopener" class="sidebar-link">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
-            View Report (PDF)
-          </a>
-        </aside>
+          <aside class="proj-sidebar"></aside>
       </div>
     </div>
   </section>
 
       <nav class="proj-nav">
     <div class="container">
-      <a href="desk-lamp.html" class="nav-proj-link">
+      <a href="microros-bot.html" class="nav-proj-link">
         <span class="nav-proj-dir">← Previous</span>
-        <span class="nav-proj-title">Desk Lamp</span>
+        <span class="nav-proj-title">MicroROS Pick-and-Place Robot</span>
       </a>
       <a href="mode-analysis.html" class="nav-proj-link next">
         <span class="nav-proj-dir">Next →</span>
@@ -152,6 +75,7 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>

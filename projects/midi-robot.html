@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="midi-robot">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Engineering Projects</span>
-        <span class="proj-date">Jan – Jun 2024</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">Robotics</span>
-        <span class="tag">Embedded</span>
-        <span class="tag">Modular Design</span>
-      </div>
-      <h1 class="proj-title">MIDI Robot</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,87 +46,14 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            MIDI is a modular mobile robot platform built as a Capstone project for METU's
-            ME462 course. The platform was designed to be used as a research and education tool for robotics,
-            with a focus on modularity, ease of use, and real-world applicability.
-          </p>
-          <p>
-            The team — Ege Sarp Dengizmen, Erdem Bayraktar, Muhammed Ömer Yiğit, Omar Habib,
-            and Seçkin Eren Yetim — designed and manufactured MIDI in METU ROMER lab.
-          </p>
-
-          <h3>Sensor Suite</h3>
-          <p>
-            The base configuration includes a comprehensive sensor suite for indoor navigation
-            and research:
-          </p>
-          <ul>
-            <li><strong style="color: var(--text);">LiDAR</strong> — 360° planar scan for obstacle avoidance and SLAM</li>
-            <li><strong style="color: var(--text);">Wide-angle camera</strong> — visual perception and object detection</li>
-            <li><strong style="color: var(--text);">IMU</strong> — orientation and acceleration data </li>
-            <li><strong style="color: var(--text);">4× Ultrasonic sensors</strong> — short-range distance sensors </li>
-            <li><strong style="color: var(--text);">4× Bumper switches</strong> — contact detection for collision recovery</li>
-          </ul>
-          <p>
-            Sensors are mounted on standardised rails that accept custom brackets, making it
-            straightforward to add or reposition sensors as mission requirements change.
-          </p>
-
-          <h3>Power System</h3>
-          <p>
-            MIDI runs on an 18 V Makita battery — chosen for its wide availability, hot-swap
-            capability. A dedicated UPS module protects the Raspberry Pi from voltage
-            sags and sudden disconnection, preventing filesystem corruption during hard shutdowns.
-          </p>
-
-          <h3>Software and Programmability</h3>
-          <p>
-            The onboard computer is a Raspberry Pi running ROS 2, with Python as the primary
-            user-facing language. The architecture was deliberately designed to lower the barrier
-            to entry: a student who knows basic Python can write a behaviour and deploy it on real hardware within a single lab session.
-          </p>
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
-            <img src="../MIDIBOT/MIDIBOT.png" alt="MIDI Robot" loading="eager">
+            <img src="../MIDIBOT/MIDIBOT.webp" alt="MIDI Robot" loading="eager">
           </div>
           <div class="proj-gallery-auto" data-folder="../MIDIBOT"></div>
-          <aside class="proj-sidebar">
-          <div class="detail-block">
-            <p class="detail-label">Context</p>
-            <p class="detail-value">METU ME462 Capstone Project</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Team</p>
-            <p class="detail-value">5 members — Mechanical Engineering, METU</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tags</p>
-            <div class="detail-tags">
-              <span class="tag">Robotics</span>
-              <span class="tag">Embedded</span>
-              <span class="tag">Modular Design</span>
-              <span class="tag">ROS 2</span>
-              <span class="tag">Sensors</span>
-            </div>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Computing</p>
-            <p class="detail-value">Raspberry Pi · ROS 2 · Python</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Power</p>
-            <p class="detail-value">Makita 18 V battery · UPS module</p>
-          </div>
-          <a href="https://github.com/Bayrakt4rdem/MIDI_ROBOT"
-             target="_blank" rel="noopener" class="sidebar-link">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            View on GitHub
-          </a>
-          </aside>
+          <aside class="proj-sidebar"></aside>
         </div>
       </div>
     </div>
@@ -154,6 +74,7 @@
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>

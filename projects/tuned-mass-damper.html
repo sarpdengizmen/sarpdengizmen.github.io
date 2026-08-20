@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="tuned-mass-damper">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Engineering Projects</span>
-        <span class="proj-date">Jul – Aug 2023</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">Vibrations</span>
-        <span class="tag">Structural Dynamics</span>
-        <span class="tag">MATLAB</span>
-      </div>
-      <h1 class="proj-title">Tuned Mass Damper</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,99 +46,16 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            A tuned mass damper (TMD) is a passive vibration absorber, a secondary mass-spring-damper
-            system attached to a primary structure to suppress resonant oscillations. By tuning the
-            absorber's natural frequency to match the primary structure's resonance, the TMD draws
-            kinetic energy away from the main mass and dissipates it internally. This project covers
-            the analytical design, optimisation, and physical demonstration of a TMD system.
-          </p>
-          <p>
-            The practical motivation is well-established: TMDs are used in skyscrapers, bridges,
-            and precision machinery to manage wind-induced sway, seismic response, and machine
-            imbalance. Taipei 101's 660-tonne pendulum damper is perhaps the most visible example.
-            This project works through the same physics at lab scale, validating the theory
-            against a physical rig.
-          </p>
-
-          <h3>2-DOF and 3-DOF Modelling</h3>
-          <p>
-            The system was modelled as both a 2-DOF system (primary structure + TMD) and a 3-DOF
-            extension (primary structure + two TMDs in series) to assess whether a dual-absorber
-            arrangement could broaden the effective suppression bandwidth. Equations of motion were
-            derived in matrix form and solved in the frequency domain to produce frequency response
-            functions (FRFs) for each configuration.
-          </p>
-          
-
-          <h3>H₂ and H∞ Optimisation</h3>
-          <p>
-            Two optimisation criteria were applied to find the best TMD parameters (mass ratio,
-            tuning ratio, and damping ratio):
-          </p>
-          <ul>
-            <li>
-              <strong style="color: var(--text);">H₂ optimisation</strong> — minimises the total
-              energy of the primary structure's response under broadband (white noise) excitation.
-              Appropriate when the excitation spectrum is wide and uncertain.
-            </li>
-            <li>
-              <strong style="color: var(--text);">H∞ optimisation</strong> — minimises the worst-case
-              peak response across all frequencies (the infinity norm of the FRF). Appropriate when
-              the excitation frequency is near-resonant and the goal is robustness against
-              detuning.
-            </li>
-          </ul>
-
-          <h3>Physical Demonstration</h3>
-          <p>
-            A physical testbed was constructed with commonly available materials, rulers act as adjustable horizontal linear stiffness elements, magnet and 
-            copper plate achieve linear viscous damping through eddy currents, a simple hobby motor with imbalance to achieve periodic excitation and a
-            accelerometer for measurement.
-            Free decay tests were performed to experimentally identify the primary structure's damping ratio and natural frequency.
-            The TMD was then tuned to this frequency using the already existing optimization code.
-            The TMD was shown to reliably suppress the primary resonance peak, with measured
-            attenuation matching theory to within acceptable experimental error.
-          </p>
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
-            <video autoplay muted loop playsinline preload="metadata">
+            <video autoplay muted loop playsinline preload="metadata" poster="../TunedMassDampener/ProjectDemonstration.jpg">
               <source src="../TunedMassDampener/ProjectDemonstration.mp4">
             </video>
           </div>
           <div class="proj-gallery-auto" data-folder="../TunedMassDampener"></div>
-          <aside class="proj-sidebar">
-          <div class="detail-block">
-            <p class="detail-label">Context</p>
-            <p class="detail-value">METU Summer Research Project</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tags</p>
-            <div class="detail-tags">
-              <span class="tag">Vibrations</span>
-              <span class="tag">Structural Dynamics</span>
-              <span class="tag">MATLAB</span>
-              <span class="tag">H₂ / H∞</span>
-              <span class="tag">Passive Control</span>
-            </div>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Methods</p>
-            <p class="detail-value">2-DOF / 3-DOF modelling · FRF analysis · H₂ optimisation · H∞ optimisation</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Tools</p>
-            <p class="detail-value">MATLAB · Simulink</p>
-          </div>
-          <a href="../TunedMassDampener/Summer Project Report.pdf"
-             target="_blank" rel="noopener" class="sidebar-link">
-            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14 21 3"/></svg>
-            View Report (PDF)
-          </a>
-          </aside>
+          <aside class="proj-sidebar"></aside>
         </div>
       </div>
     </div>
@@ -157,15 +67,16 @@
         <span class="nav-proj-dir">← Previous</span>
         <span class="nav-proj-title">Vertical Axis Wind Turbine</span>
       </a>
-      <a href="soft-robotics.html" class="nav-proj-link next">
+      <a href="blooming-rose.html" class="nav-proj-link next">
         <span class="nav-proj-dir">Next →</span>
-        <span class="nav-proj-title">Soft Robotics Gripper</span>
+        <span class="nav-proj-title">Blooming Rose Gift Box</span>
       </a>
     </div>
   </nav>
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>

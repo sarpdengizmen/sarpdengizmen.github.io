@@ -348,13 +348,15 @@ img, video { display: block; max-width: 100%; }
   justify-content: center;
 }
 .lightbox.open { display: flex; }
-.lightbox-img {
+.lightbox-img,
+.lightbox-video {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
   border-radius: 6px;
   display: block;
 }
+.lightbox-video { background: #000; }
 .lightbox-close {
   position: absolute;
   top: 20px;

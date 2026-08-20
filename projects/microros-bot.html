@@ -10,7 +10,7 @@
   <script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
   <link rel="stylesheet" href="../css/project.css" />
 </head>
-<body>
+<body data-project="microros-bot">
 
   <nav id="navbar">
     <div class="container">
@@ -37,15 +37,8 @@
         </svg>
         All Projects
       </a>
-      <div class="proj-meta">
-        <span class="proj-category">Engineering Projects</span>
-        <span class="proj-date">Jan - Feb 2026</span>
-        <span class="proj-meta-sep"></span>
-        <span class="tag">ROS 2</span>
-        <span class="tag">Robotics</span>
-        <span class="tag">Embedded</span>
-      </div>
-      <h1 class="proj-title">MicroROS Pick-and-Place Robot</h1>
+      <div class="proj-meta"></div>
+      <h1 class="proj-title"></h1>
     </div>
   </header>
 
@@ -53,59 +46,7 @@
     <div class="container">
       <div class="proj-layout">
 
-        <div class="proj-description">
-          <p>
-            This project is a fully autonomous pick-and-place robot built on a differential-drive
-            platform. The robot's task: locate a red object anywhere on a flat workspace, navigate
-            to it, pick it up with a two-DOF servo gripper, and deposit it at a fixed target
-            location — all without human input after launch.
-          </p>
-          <p>
-            The challenge was integrating perception, real-time low-level control, and high-level
-            task planning across three distinct computational tiers.
-          </p>
-
-          <h3>System Architecture</h3>
-          <p>
-            The system is partitioned into three tiers communicating over ROS 2:
-          </p>
-          <ul>
-            <li>
-              <strong style="color: var(--text);">ESP32 firmware (micro-ROS / FreeRTOS)</strong> —
-              handles hard real-time motor PI control, quadrature encoder sampling at 1 kHz,
-              and servo PWM generation. Communicates over UDP WiFi to the micro-ROS Agent running
-              on a PC, bridging to the main ROS network.
-            </li>
-            <li>
-              <strong style="color: var(--text);">PC Python nodes (ROS 2 / OpenCV)</strong> —
-              run the vision pipeline: AprilTag corner detection for workspace calibration,
-              homography-based coordinate transform, and HSV colour segmentation to locate
-              the target object. Publishes pose estimates and issues velocity commands.
-            </li>
-            <li>
-              <strong style="color: var(--text);">MATLAB / Simulink Stateflow</strong> —
-              implements the high-level pick-and-place state machine. Sequentially transitions
-              through: navigate-to-object → align → descend gripper → grip → navigate-to-target
-              → release.
-            </li>
-          </ul>
-
-          <h3>Workspace &amp; Localisation</h3>
-          <p>
-            Four AprilTags (IDs 0–3) are taped at the corners of a 790 × 730 mm mat and define
-            the metric coordinate frame via homography. The robot carries AprilTag ID 4 on top,
-            giving the ceiling-mounted USB camera full 3-DOF pose estimation (x, y, heading) of
-            the robot at all times. This architecture removes the need for onboard sensors for
-            self-localisation.
-          </p>
-
-          <h3>Low-Level Control</h3>
-          <p>
-            Each wheel is driven by a DRV8833 H-bridge module and controlled by a discrete-time
-            PI controller running on the ESP32 at 100 Hz. Encoder counts from quadrature encoders
-            (420 CPR) are used to close the velocity loop independently on each side.
-          </p>
-        </div>
+        <div class="proj-description"></div>
 
         <div class="proj-right">
           <div class="proj-lead-media">
@@ -114,36 +55,7 @@
             </video>
           </div>
           <div class="proj-gallery-auto" data-folder="../MicroRosBot"></div>
-          <aside class="proj-sidebar">
-          <div class="detail-block">
-            <p class="detail-label">Context</p>
-            <p class="detail-value">Academic Project — Robotics Lab</p>
-          </div>
-
-          <div class="detail-block">
-            <p class="detail-label">Tags</p>
-            <div class="detail-tags">
-              <span class="tag">ROS 2</span>
-              <span class="tag">micro-ROS</span>
-              <span class="tag">Embedded</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Stateflow</span>
-            </div>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Hardware</p>
-            <p class="detail-value">ESP32 · 2× DRV8833 · DC motors w/ encoders · 2× Servo · USB camera</p>
-          </div>
-          <div class="detail-block">
-            <p class="detail-label">Software</p>
-            <p class="detail-value">micro-ROS · ROS 2 · OpenCV · MATLAB Simulink Stateflow · Python</p>
-          </div>
-          <a href="https://github.com/sarpdengizmen/microros_bot"
-             target="_blank" rel="noopener" class="sidebar-link">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            View on GitHub
-          </a>
-          </aside>
+          <aside class="proj-sidebar"></aside>
         </div>
       </div>
     </div>
@@ -151,19 +63,20 @@
 
       <nav class="proj-nav">
     <div class="container">
-      <a href="mini-fan.html" class="nav-proj-link">
+      <a href="soft-robotics.html" class="nav-proj-link">
         <span class="nav-proj-dir">← Previous</span>
-        <span class="nav-proj-title">Mini Hand Fan</span>
+        <span class="nav-proj-title">Soft Robotics Gripper</span>
       </a>
-      <a href="desk-lamp.html" class="nav-proj-link next">
+      <a href="rotary-pendulum.html" class="nav-proj-link next">
         <span class="nav-proj-dir">Next →</span>
-        <span class="nav-proj-title">Desk Lamp</span>
+        <span class="nav-proj-title">Rotary Inverted Pendulum</span>
       </a>
     </div>
   </nav>
 
   <footer><div class="container"><p>© 2026 Ege Sarp Dengizmen</p></div></footer>
 
+  <script src="../content/projects.js"></script>
   <script src="../js/project.js"></script>
 </body>
 </html>
