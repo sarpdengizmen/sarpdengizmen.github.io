@@ -619,7 +619,7 @@ const PROJECTS = [
     `,
 
     details: [
-      { label: "Context", value: "Vibrations & Structural Dynamics Course — METU" },
+      { label: "Context", value: "Vibrations & Structural Dynamics Course — Polimi" },
       { label: "Tags", tags: ["Structural Dynamics", "Signal Processing", "FEM", "Modal Analysis", "ITD Method"] },
       { label: "Methods", value: "Impact hammer testing · FRF extraction (H1) · ITD · AutoMAC · FE model correlation" },
       { label: "Tools", value: "MATLAB · FE software" },
